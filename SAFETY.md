@@ -331,6 +331,6 @@ For clinical safety enquiries relating to this product, please contact:
 
 The clinical safety documentation in this repository is licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 
-The software code in this repository is licensed under the [MIT License](./LICENSE).
+The licensing for this repository is described in [LICENSE.md](./LICENSE.md).
 
 Attribution: This Clinical Safety Management File is derived in part from templates produced by the NHS Digital Clinical Safety team and from the DCB0129 Clinical Safety Management File template by Dr Marcus Baw / Baw Medical Ltd, available at https://github.com/pacharanero/dcb0129-template.

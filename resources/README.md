@@ -4,7 +4,7 @@ This directory contains upstream reference material relevant to the SAFETY.md sp
 
 These files are retained as source evidence and context. They are not themselves normative SAFETY.md text. Where SAFETY.md maps to, interprets, or responds to these sources, that interpretation should live in the specification, mappings, or explanatory material rather than by editing the upstream documents.
 
-Readable reconstructions and role-specific briefings derived from these sources live in [`../legislation/`](../legislation/).
+Readable reconstructions and role-specific briefings derived from legislation sources live in [`../legislation/`](../legislation/). First-pass Markdown/text renderings of upstream documents live in [`../upstream/`](../upstream/). Crosswalks from upstream concepts to SAFETY.md live in [`../mappings/`](../mappings/).
 
 ## Scope
 
@@ -12,6 +12,8 @@ Readable reconstructions and role-specific briefings derived from these sources 
 |---|---|---|
 | [`dcb0129/`](./dcb0129/) | NHS England DCB0129 2018 Update documents for clinical risk management in the manufacture of health IT systems. | Current published standard at date of access. |
 | [`dcb0160/`](./dcb0160/) | NHS England DCB0160 2018 Update documents for clinical risk management in the deployment and use of health IT systems. | Current published standard at date of access. |
+| [`data-safety/`](./data-safety/) | Data safety and agile-development clinical risk management guidance. | Upstream/context material; provenance incomplete. |
+| [`templates/`](./templates/) | Upstream clinical safety document templates. | Source artefacts for future SAFETY.md-native templates; provenance incomplete. |
 | [`legislation/`](./legislation/) | Legislation or Acts that may affect health IT, clinical safety, information standards, or data use. | Context for future SAFETY.md alignment work. |
 
 ## Consultation material

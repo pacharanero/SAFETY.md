@@ -1,40 +1,104 @@
 # SAFETY.md
 
-Following the pattern of common GitHub Markdown files like `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md`, **`SAFETY.md`** is a standard file set and schema for clinical safety documentation in software projects.
+**SAFETY.md** is a repository-native convention for clinical safety documentation in software projects.
 
-It aims to provide a modern, teamwork-friendly implementation path for compliance with NHS standards like DCB0129 and DCB0160, while also being flexible enough to be adopted by a wide range of projects.
+It follows the pattern of familiar root-level files such as `README.md`, `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`, and `CODE_OF_CONDUCT.md`: put the important project information where developers, reviewers, clinical safety officers, and automated tools can actually find it.
 
-It can start as simply as a single `SAFETY.md` file with embedded hazard information for a low-risk tool, and scale up to a full set of files for a complex regulated medical device.
+The core principle is:
 
-**21st Century Version Control**: Forget about clumsy, out-of-date 'document control' tables in Word. Simply by using Git and Markdown files, teams can maintain a clear audit trail of safety decisions and changes over time. Attribution of edits is clear from the commit history.
+> **Safety close to code.**
 
-**Codebase Integration**: Code changes that impact safety documentation can be linked to specific commits, and the `SAFETY.md` file set can evolve alongside the codebase in a natural way.
+Clinical safety documentation should live close to the software, release history, issues, pull requests, tests, and operational evidence that affect patient safety.
 
-**Grown-up Hazard Management**: Hazard mitigation can be evidenced through commit messages and pull request discussions, rather than relying on a creaking Excel spreadsheet.
+## Aim
 
-**LLM-friendly**: The files-on-disk approach makes it easy for AI tools to parse and adapt safety documentation, while still being human-readable. LLMs are potentially a vital tool for helping teams maintain and evolve their safety documentation, without in any way diminishing the critical human role in making safety decisions.
+SAFETY.md is intended to make clinical safety documentation easier to do well, not easier to evade.
 
-## Files and Tiering
+The aim is to take NHS England clinical safety standards and related UK health IT guidance, then turn them into practical, repository-native conventions that help manufacturers and deploying organisations comply with the rules while wasting as little time as possible on bland documentation.
+
+The time saved should be redirected toward the work that actually makes software safer for patients:
+
+- identifying hazards;
+- understanding clinical context;
+- designing and evidencing mitigations;
+- reviewing residual risk;
+- keeping safety evidence close to code, releases, issues, pull requests, and operational reality.
+
+Nothing in this repository is intended to circumvent, dilute, or replace applicable regulations, information standards, clinical safety standards, medical-device obligations, data-protection duties, or professional Clinical Safety Officer judgement.
+
+SAFETY.md is an implementation and evidence pattern for doing the required work in a modern software workflow.
+
+## Repository map
+
+| Path | Purpose |
+|---|---|
+| [`spec.md`](./spec.md) | Draft SAFETY.md specification. |
+| [`SAFETY.md`](./SAFETY.md) | Example/template root safety file. |
+| [`roadmap.md`](./roadmap.md) | Current roadmap and work plan. |
+| [`GLOSSARY.md`](./GLOSSARY.md) | Shared terminology for clinical safety, SAFETY.md, and related legislation. |
+| [`resources/`](./resources/) | Upstream source files, manifests, checksums, and provenance. |
+| [`upstream/`](./upstream/) | First-pass Markdown/text renderings of upstream source documents. |
+| [`mappings/`](./mappings/) | Crosswalks from DCB0129, DCB0160, and DUAA2025 concepts to SAFETY.md artefacts. |
+| [`legislation/`](./legislation/) | Readable reconstructions and role-specific briefings for relevant legislation. |
+| [`queries.md`](./queries.md) | Open questions requiring human confirmation. |
+
+## Current upstream focus
+
+This repository is becoming the canonical working corpus for:
+
+- DCB0129 manufacturer-side clinical risk management;
+- DCB0160 deployment/use-side clinical risk management;
+- upstream clinical safety templates and guidance;
+- readable DUAA2025 / health information-standard implications;
+- SAFETY.md-native templates, schemas, and evidence-pack conventions.
+
+Older separate repositories should be treated as historical inputs unless explicitly incorporated here.
+
+## Files and tiering
 
 ### Tier 1
 
-To start with, all you need is
-- `SAFETY.md` — the main safety file with project overview, safety strategy, and hazard summary
+For a low-risk project, start with:
+
+- `SAFETY.md` — root safety file with project overview, applicable standard(s), safety strategy, and hazard summary.
 
 ### Tier 2
 
-As work progresses, you can add more files as needed:
+For projects where more formal clinical safety evidence is needed, add:
 
-- `SAFETY-CASE.md` — detailed clinical safety case with arguments and evidence
-- `HAZARD-LOG.md` — simple hazard log in Markdown format in a single file
-- `SAFETY-PLAN.md` — clinical safety management plan with processes and responsibilities
+- `SAFETY-CASE.md` — structured clinical safety case with argument and evidence;
+- `HAZARD-LOG.md` — hazard log in Markdown/structured data, or a link to a managed issue-based hazard log;
+- `SAFETY-PLAN.md` — clinical risk management process and responsibilities, where needed.
 
 ### Tier 3
 
-Once you have a few Clinical Safety documents you are likely to want to collect them together into a folder - this might be a `safety/` folder, or a `docs/safety/` folder, or something else. The important thing is that the `SAFETY.md` file is still in the root of the repository and references the other files correctly.
+For larger or higher-risk projects, clinical safety documentation may live in a `safety/` or `docs/safety/` folder, with root `SAFETY.md` remaining the front door.
 
-Hazard Log becomes a multiple-file system, with one file per hazard, generated from template and a GitHub Action to enforce that all hazards are linked from `SAFETY.md` and have the required frontmatter fields.
+Hazards may become a multi-file or issue-based system, with automation to enforce required metadata, links, status, and review.
 
 ### Tier 4
 
-In a larger project, clinical safety documentation might be large enough to warrant being separated out into its own repository, with links to potentially several code repositories. This is not a common scenario but is possible within the SAFETY.md framework.
+For large programmes, safety documentation may span several repositories. Even then, each code repository should have a root `SAFETY.md` pointing to the relevant safety case, hazard log, assumptions, and evidence.
+
+## Relationship to DCB0129, DCB0160, and DUAA2025
+
+SAFETY.md does not replace DCB0129 or DCB0160. It provides a practical way to organise evidence and documentation that may support compliance with them.
+
+The Data (Use and Access) Act 2025 strengthens the wider health/care information-standards context, including standards that may apply to software, code, IT services, interoperability, portability, storage/access to information, and information security. SAFETY.md should help clinical safety evidence sit alongside those assurance domains without pretending the CSO owns them all.
+
+See:
+
+- [`mappings/dcb0129-to-safety-md.md`](./mappings/dcb0129-to-safety-md.md)
+- [`mappings/dcb0160-to-safety-md.md`](./mappings/dcb0160-to-safety-md.md)
+- [`mappings/duaa2025-to-safety-md.md`](./mappings/duaa2025-to-safety-md.md)
+- [`legislation/cso-briefing-data-use-and-access-act-2025.md`](./legislation/cso-briefing-data-use-and-access-act-2025.md)
+
+## Document control
+
+Git-based document control is still document control.
+
+SAFETY.md uses commits, branches, pull requests, reviews, approvals, tags, releases, and repository history to implement the aims of document control in a way that fits modern software development.
+
+## Status
+
+Draft / active development.
