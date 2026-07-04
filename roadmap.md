@@ -163,16 +163,17 @@ Use a consistent `safety-md-*` naming scheme rather than command-style names. Th
 * [x] Define a consistent skill naming scheme.
 * [x] Define a first-pass skill catalogue.
 * [x] Define an implementation plan for the first executable skills.
-* [ ] Create project-local executable skill `safety-md-csmf`.
-* [ ] Create project-local executable skill `safety-md-hazard-workshop`.
-* [ ] Create project-local executable skill `safety-md-review`.
-* [ ] Create project-local executable skill `safety-md-duaa2025-check`.
-* [ ] Create project-local executable skill `safety-md-template-modernise`.
-* [ ] Create project-local executable skill `safety-md-mdr-triage`.
-* [ ] Create project-local executable skill `safety-md-dtac-evidence`.
-* [ ] Create user-invoked `safety-md-router` once the number of skills creates cognitive load.
-* [ ] Keep skills concise and move longer content into `references/` and `templates/`.
-* [ ] Add a `Common Gotchas` section to every executable skill and grow it from real runs.
+* [x] Create project-local executable skill `safety-md-csmf`.
+* [x] Create project-local executable skill `safety-md-hazard-workshop`.
+* [x] Create project-local executable skill `safety-md-review`.
+* [x] Create project-local executable skill `safety-md-duaa2025-check`.
+* [x] Create project-local executable skill `safety-md-template-modernise`.
+* [x] Create project-local executable skill `safety-md-mdr-triage`.
+* [x] Create project-local executable skill `safety-md-dtac-evidence`.
+* [x] Create user-invoked `safety-md-router` once the number of skills creates cognitive load.
+* [x] Create maintenance skills `safety-md-release-review` and `safety-md-incident-update`.
+* [x] Keep initial skills concise and move longer content into `references/` and `templates/`.
+* [x] Add a `Common Gotchas` section to core executable skills and grow it from real runs.
 * [ ] Test initial skills on `calc`, one historical Turva/RCPCH-derived repo, one low-risk informational app, one deployment-style repo, and one AI/ML-adjacent repo.
 
 ### Skill positioning vs ArcKit
@@ -181,4 +182,5 @@ Use a consistent `safety-md-*` naming scheme rather than command-style names. Th
 * [ ] Treat ArcKit as a broad governance/assurance vehicle that can consume SAFETY.md outputs.
 * [ ] Do not try to duplicate ArcKit's full DTAC/MDR/QMS breadth inside core SAFETY.md skills.
 * [ ] Feed DUAA2025-aware improvements back into ArcKit's NHS overlay once SAFETY.md conventions stabilise.
-* [ ] Preserve root-of-repository `SAFETY.md` as the default output pattern for SAFETY.md skills, even where ArcKit uses `projects/{NNN}/clinical-safety/`.
+* [x] Preserve root-of-repository `SAFETY.md` as the default output pattern for SAFETY.md skills, even where ArcKit uses `projects/{NNN}/clinical-safety/`.
+* [x] Make SAFETY.md skills user-invoked only, so users deliberately choose when clinical safety/regulatory workflows run.

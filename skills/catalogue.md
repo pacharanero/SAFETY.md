@@ -6,7 +6,7 @@ Planned skill names use the `safety-md-*` prefix for consistency and discoverabi
 
 ### `safety-md-csmf`
 
-**Invocation:** model-invoked.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user wants to create, initialise, generate, or update a repo-native Clinical Risk Management File / CSMF / SAFETY.md file set for a health software project.
 
@@ -38,7 +38,7 @@ Planned skill names use the `safety-md-*` prefix for consistency and discoverabi
 
 ### `safety-md-hazard-workshop`
 
-**Invocation:** model-invoked.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user wants to identify hazards, run a hazard workshop, populate a hazard log, or stress-test a product’s clinical safety risks.
 
@@ -79,7 +79,7 @@ Planned skill names use the `safety-md-*` prefix for consistency and discoverabi
 
 ### `safety-md-review`
 
-**Invocation:** model-invoked.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user asks to review, audit, check, or improve existing SAFETY.md/CSMF/clinical safety documentation.
 
@@ -109,7 +109,7 @@ Planned skill names use the `safety-md-*` prefix for consistency and discoverabi
 
 ### `safety-md-duaa2025-check`
 
-**Invocation:** model-invoked or called from `safety-md-review`.
+**Invocation:** user-invoked (`disable-model-invocation: true`); may be recommended by `safety-md-review`, but should not auto-run.
 
 **Use when:** the user wants to check whether a health IT repo/safety file set reflects DUAA2025 and amended information-standard implications.
 
@@ -134,7 +134,7 @@ Planned skill names use the `safety-md-*` prefix for consistency and discoverabi
 
 ### `safety-md-mdr-triage`
 
-**Invocation:** model-invoked only for medical-device uncertainty; may also be user-invoked.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user asks whether a product might be a medical device, mentions MDR/MHRA/SaMD/AIaMD, or asks for classification triage.
 
@@ -153,7 +153,7 @@ This skill should not pretend to be a full MDR classifier or regulatory opinion.
 
 ### `safety-md-dtac-evidence`
 
-**Invocation:** model-invoked when DTAC evidence is requested; may call `safety-md-review`.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user wants to prepare clinical-safety evidence for DTAC, especially Section 1 clinical safety.
 
@@ -173,7 +173,7 @@ This is not a full DTAC generator. ArcKit already covers broad DTAC. SAFETY.md s
 
 ### `safety-md-template-modernise`
 
-**Invocation:** user-invoked initially; model-invoked later if reliable.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user wants to migrate old DCB0129/DCB0160/CSMF documentation, Word templates, MkDocs/Docker safety docs, or historical Turva/RCPCH-derived material into SAFETY.md v2 style.
 
@@ -195,7 +195,7 @@ This is not a full DTAC generator. ArcKit already covers broad DTAC. SAFETY.md s
 
 ### `safety-md-release-review`
 
-**Invocation:** model-invoked when a release, PR, or version bump may affect safety.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user asks whether a code change/release affects clinical safety, or wants to prepare release safety notes.
 
@@ -220,7 +220,7 @@ This is not a full DTAC generator. ArcKit already covers broad DTAC. SAFETY.md s
 
 ### `safety-md-incident-update`
 
-**Invocation:** model-invoked when the user reports an incident, near miss, safety issue, or post-market safety signal.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user wants to turn an incident into hazard-log updates and safety-case learning.
 
@@ -241,7 +241,7 @@ Do not replace organisational incident reporting or statutory reporting. The ski
 
 ### `safety-md-router`
 
-**Invocation:** user-invoked.
+**Invocation:** user-invoked (`disable-model-invocation: true`).
 
 **Use when:** the user wants help choosing which SAFETY.md skill to run.
 

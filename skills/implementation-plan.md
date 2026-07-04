@@ -8,10 +8,8 @@
   - `HAZARD-LOG.md`
   - `SAFETY-PLAN.md`
 - [ ] Extract reusable hazard archetypes into `skills/references/hazard-archetypes.md` or equivalent.
-- [ ] Decide whether executable skills live initially in:
-  - project-local `.agents/skills/`, preferred for this repo; or
-  - global `~/.agents/skills/`, useful for personal experimentation.
-- [ ] Decide whether any skills should be user-invoked only with `disable-model-invocation: true`.
+- [x] Place executable skills initially in project-local `.agents/skills/`, so they are versioned with this repository and do not run unexpectedly in unrelated projects.
+- [x] Make all SAFETY.md executable skills user-invoked with `disable-model-invocation: true`, so users remain in control of when clinical safety/regulatory workflows run.
 
 ## Phase 1 — build `safety-md-csmf`
 
@@ -99,13 +97,13 @@ description: Review existing SAFETY.md, CSMF, DCB0129, or DCB0160 clinical safet
 
 ## Phase 4 — build DUAA2025/MDR/DTAC helpers
 
-Build only after the core skills are stable:
+Initial executable stubs have been created:
 
-- `safety-md-duaa2025-check`
-- `safety-md-mdr-triage`
-- `safety-md-dtac-evidence`
+- [x] `safety-md-duaa2025-check`
+- [x] `safety-md-mdr-triage`
+- [x] `safety-md-dtac-evidence`
 
-These should be small, specialist helpers rather than broad ArcKit replacements.
+These should stay small, specialist helpers rather than broad ArcKit replacements.
 
 ## Test repos
 

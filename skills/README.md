@@ -42,30 +42,32 @@ A skill exists to wrangle predictability out of a stochastic system. The same pr
 
 Prefer several focused skills over one giant `safety-md` skill. Split by invocation when the user would naturally ask for a distinct thing. Split by sequence when showing later steps would tempt the agent into premature completion.
 
-### Model-invoked vs user-invoked
+### User-invoked by default
 
-Use model-invoked skills when the agent should autonomously reach for the skill. Use user-invoked/router skills when the skill is mainly a human-selected workflow.
+SAFETY.md skills are **user-invoked** by design. Clinical safety, regulatory, and assurance workflows should run when the user deliberately chooses them, not because an agent guessed from a weak trigger.
 
-For SAFETY.md, likely model-invoked skills:
+This avoids two failure modes:
 
-- `safety-md-csmf`
-- `safety-md-review`
-- `safety-md-hazard-workshop`
+- misfiring when safety/regulatory work was not requested;
+- silently substituting an automatic skill trigger for explicit human control.
 
-Likely user-invoked or later-stage skills:
+Every executable SAFETY.md skill should set:
 
-- `safety-md-router`
-- `safety-md-template-modernise`
-- `safety-md-mdr-triage`
+```yaml
+disable-model-invocation: true
+```
 
-### Descriptions are trigger surfaces
+Documentation should make clear when a user should choose each skill. If the skill set becomes hard to remember, use the user-invoked `safety-md-router` skill rather than model-invocation.
 
-The skill `description` should front-load the leading phrase and list genuinely distinct trigger branches. Avoid synonyms that describe the same branch twice.
+### Descriptions are human-facing summaries
+
+Because SAFETY.md skills are user-invoked, the skill `description` should be a concise human-facing summary rather than an aggressive trigger surface.
 
 Example:
 
 ```yaml
-description: Generate or update repo-native SAFETY.md clinical safety documentation for health software projects, including CSMF structure, hazard logs, DCB0129/DCB0160 role split, DUAA2025-aware assurance domains, and CSO review prompts.
+description: User-invoked skill for generating or updating repo-native SAFETY.md Clinical Risk Management File documentation.
+disable-model-invocation: true
 ```
 
 ### Progressive disclosure

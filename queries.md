@@ -33,8 +33,7 @@ Open questions that need human confirmation before related material can be treat
 
 ## Skills
 
-11. Should executable SAFETY.md skills initially live project-locally under `.agents/skills/`, or should Marcus also maintain experimental global copies under `~/.agents/skills/` while iterating?
-12. Should `safety-md-csmf` be model-invoked immediately, or user-invoked until it has been tested on several repositories?
-13. Should `safety-md-mdr-triage` remain a lightweight escalation/handoff skill only, or eventually grow into a fuller MDR classification workflow?
-14. Should SAFETY.md skills generate root-level files by default in all repos, or ask before writing root-level clinical safety files when a repo already has `docs/safety/` or another existing structure?
-15. Should `safety-md-dtac-evidence` remain limited to clinical-safety evidence for DTAC, or eventually become a full DTAC generator? Current recommendation: keep full DTAC in ArcKit and keep SAFETY.md focused.
+11. Should Marcus also maintain experimental global copies under `~/.agents/skills/` while iterating, or keep the project-local `.agents/skills/` versions as the only canonical executable copies?
+12. Should `safety-md-mdr-triage` remain a lightweight escalation/handoff skill only, or eventually grow into a fuller MDR classification workflow?
+13. Should SAFETY.md skills generate root-level files by default in all repos, or ask before writing root-level clinical safety files when a repo already has `docs/safety/` or another existing structure?
+14. Should `safety-md-dtac-evidence` remain limited to clinical-safety evidence for DTAC, or eventually become a full DTAC generator? Current recommendation: keep full DTAC in ArcKit and keep SAFETY.md focused.
