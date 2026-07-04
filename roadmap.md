@@ -139,3 +139,46 @@ Older separate repositories such as `dcb0129-markdown` and `dcb0129-template` sh
 * [ ] Anything authored by Marcus Baw as original SAFETY.md work is intended to be CC-BY-SA-Int 4.0 unless otherwise stated.
 * [ ] Commercial reuse is allowed and encouraged, but attribution is required.
 * [ ] Add SPDX-style licence markers or frontmatter where practical.
+
+
+## Skills roadmap
+
+SAFETY.md should become a specialist skill pack for generating, reviewing, and maintaining repository-native clinical safety documentation. See [`skills/README.md`](./skills/README.md), [`skills/catalogue.md`](./skills/catalogue.md), and [`skills/implementation-plan.md`](./skills/implementation-plan.md).
+
+Use a consistent `safety-md-*` naming scheme rather than command-style names. The rough command ideas map as follows:
+
+| Original idea | Planned skill |
+|---|---|
+| `/create-dcb-0129-csmf` | `safety-md-csmf` with manufacturer/DCB0129 branch |
+| `/create-dcb-0160-csmf` | `safety-md-csmf` with deployer/DCB0160 branch |
+| `/create-safety-case` | `safety-md-csmf` and/or `safety-md-review` depending on whether creating or updating |
+| `/determine-mdr-classification` | `safety-md-mdr-triage` only; full MDR classification may remain better handled by ArcKit/regulatory specialist review |
+| `/create-mdr-qms` | Out of scope for core SAFETY.md initially; track as possible future `safety-md-qms-evidence` or handoff to ArcKit/regulatory tooling |
+| `/prepare-mdr-registration` | Out of scope for core SAFETY.md initially; track as possible future regulatory handoff, not a clinical safety skill |
+| `/create-dtac` | `safety-md-dtac-evidence` for clinical-safety evidence slice; full DTAC generation remains better suited to ArcKit |
+
+### Skill creation principles
+
+* [x] Add a skill strategy document grounded in Zed skill guidance and the `writing-great-skills` predictability/progressive-disclosure model.
+* [x] Define a consistent skill naming scheme.
+* [x] Define a first-pass skill catalogue.
+* [x] Define an implementation plan for the first executable skills.
+* [ ] Create project-local executable skill `safety-md-csmf`.
+* [ ] Create project-local executable skill `safety-md-hazard-workshop`.
+* [ ] Create project-local executable skill `safety-md-review`.
+* [ ] Create project-local executable skill `safety-md-duaa2025-check`.
+* [ ] Create project-local executable skill `safety-md-template-modernise`.
+* [ ] Create project-local executable skill `safety-md-mdr-triage`.
+* [ ] Create project-local executable skill `safety-md-dtac-evidence`.
+* [ ] Create user-invoked `safety-md-router` once the number of skills creates cognitive load.
+* [ ] Keep skills concise and move longer content into `references/` and `templates/`.
+* [ ] Add a `Common Gotchas` section to every executable skill and grow it from real runs.
+* [ ] Test initial skills on `calc`, one historical Turva/RCPCH-derived repo, one low-risk informational app, one deployment-style repo, and one AI/ML-adjacent repo.
+
+### Skill positioning vs ArcKit
+
+* [ ] Keep SAFETY.md focused as the clinical safety engine: source corpus, glossary, mappings, templates, and focused skills.
+* [ ] Treat ArcKit as a broad governance/assurance vehicle that can consume SAFETY.md outputs.
+* [ ] Do not try to duplicate ArcKit's full DTAC/MDR/QMS breadth inside core SAFETY.md skills.
+* [ ] Feed DUAA2025-aware improvements back into ArcKit's NHS overlay once SAFETY.md conventions stabilise.
+* [ ] Preserve root-of-repository `SAFETY.md` as the default output pattern for SAFETY.md skills, even where ArcKit uses `projects/{NNN}/clinical-safety/`.

@@ -40,6 +40,7 @@ SAFETY.md is an implementation and evidence pattern for doing the required work 
 | [`upstream/`](./upstream/) | First-pass Markdown/text renderings of upstream source documents. |
 | [`mappings/`](./mappings/) | Crosswalks from DCB0129, DCB0160, and DUAA2025 concepts to SAFETY.md artefacts. |
 | [`legislation/`](./legislation/) | Readable reconstructions and role-specific briefings for relevant legislation. |
+| [`skills/`](./skills/) | Planned SAFETY.md agent skill strategy, catalogue, and implementation plan. |
 | [`queries.md`](./queries.md) | Open questions requiring human confirmation. |
 
 ## Current upstream focus
@@ -50,7 +51,7 @@ This repository is becoming the canonical working corpus for:
 - DCB0160 deployment/use-side clinical risk management;
 - upstream clinical safety templates and guidance;
 - readable DUAA2025 / health information-standard implications;
-- SAFETY.md-native templates, schemas, and evidence-pack conventions.
+- SAFETY.md-native templates, schemas, evidence-pack conventions, and agent skills.
 
 Older separate repositories should be treated as historical inputs unless explicitly incorporated here.
 
