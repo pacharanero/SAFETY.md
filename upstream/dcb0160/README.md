@@ -10,6 +10,7 @@ These files are intended to become the checked canonical Markdown versions in th
 | [`implementation-guidance.md`](./implementation-guidance.md) | Implementation Guidance (Amd 25/2018) | First-pass extraction; needs artefact review. |
 | [`information-standards-notice.md`](./information-standards-notice.md) | Information Standards Notice (Amd 25/2018) | First-pass extraction; needs artefact review. |
 | [`change-specification.md`](./change-specification.md) | Change Specification (Amd 25/2018) | First-pass extraction; needs artefact review. |
+| [`compliance-assessment-template.md`](./compliance-assessment-template.md) | Compliance Assessment Template workbook | Structure summary only; source workbook remains canonical. |
 
 ## Review checklist
 

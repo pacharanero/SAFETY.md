@@ -20,7 +20,7 @@ Open questions that need human confirmation before related material can be treat
 
 5. Should canonical Markdown renderings preserve upstream typos exactly with annotations, or silently correct obvious extraction/OCR artefacts while preserving a change log?
 6. Should first-pass extracted Markdown files remain fenced as `text` blocks until reviewed, or should the next pass convert them into semantic Markdown headings/tables immediately?
-7. Should spreadsheet templates be rendered as CSV/Markdown tables in this repository, or retained only as binary upstream source files plus narrative summaries?
+7. RESOLVED for Stage 1: retain spreadsheet templates as binary upstream source files plus narrative Markdown structure summaries. Revisit full CSV/Markdown extraction only if a later schema/crosswalk task needs it.
 
 ## Product direction
 

@@ -29,14 +29,14 @@ Completed first-pass foundations:
 
 Goal: make the upstream reference corpus trustworthy enough to build templates and skills against.
 
-- [ ] Complete DCB0129 compliance assessment provenance and, if practical, add a Markdown-readable structure summary.
-- [ ] Complete DCB0160 compliance assessment provenance and, if practical, add a Markdown-readable structure summary.
+- [x] Complete DCB0129 compliance assessment provenance and, if practical, add a Markdown-readable structure summary.
+- [x] Complete DCB0160 compliance assessment provenance and, if practical, add a Markdown-readable structure summary.
 - [ ] Confirm source URLs and licence/re-use status for `resources/templates/`.
 - [ ] Confirm source URLs and licence/re-use status for `resources/data-safety/`.
 - [ ] Confirm provenance/authorship of `assets/risk-matrix.png`.
 - [ ] Check DCB0129 Markdown extractions against source PDFs and remove/annotate extraction artefacts.
 - [ ] Check DCB0160 Markdown extractions against source PDFs and remove/annotate extraction artefacts.
-- [ ] Decide whether spreadsheet templates should be rendered as CSV/Markdown tables or retained as binaries plus summaries.
+- [x] Decide whether spreadsheet templates should be rendered as CSV/Markdown tables or retained as binaries plus summaries.
 - [ ] Keep historical source attribution distinct from current publisher/current-owner wording, especially NHS Digital/NHS England/DHSC transition language.
 
 ## Stage 2 — tighten SAFETY.md specification

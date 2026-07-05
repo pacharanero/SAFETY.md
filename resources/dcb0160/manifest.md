@@ -23,7 +23,7 @@
 | `0160252018spec.pdf` | Specification (Amd 25/2018) | Official source URL above | Current published release at date accessed | `ec46e387e5d97ef98a0ee85d0edc6698cfa78391cebf8dbabe592caf0e3dcff1` |
 | `0160252018impguid.pdf` | Implementation Guidance (Amd 25/2018) | Official source URL above | Current published release at date accessed | `4e2cff49e717e9344d7922fce4b47faaa47f80691663f84bab6733f6ac28462b` |
 | `0160252018isn.pdf` | Information Standards Notice (Amd 25/2018) | Official source URL above | Current published release at date accessed | `d4e47371a8dfa616c1b44004c4ece01ef0755d3bb2c3d0fb21d7937e51c69d8d` |
-| `DCB-0160-compliance-assessment-v5.0.xlsx` | Compliance Assessment Template (Amd 38/2012) | Official source URL above | Supporting document linked from current release page at date accessed | `ca0d3861148451e46bafd4a15b89fc811cc2b88801279907d8524f1f8901085b` |
+| `DCB-0160-compliance-assessment-v5.0.xlsx` | Compliance Assessment Template (Amd 38/2012) | Official source URL above | Supporting document linked from current release page at date accessed; structure summary in `../../upstream/dcb0160/compliance-assessment-template.md` | `ca0d3861148451e46bafd4a15b89fc811cc2b88801279907d8524f1f8901085b` |
 
 ## Notes for SAFETY.md work
 
