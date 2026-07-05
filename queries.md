@@ -13,7 +13,7 @@ Open questions that need human confirmation before related material can be treat
 2. Confirm exact source URLs and licence/re-use terms for files in `resources/data-safety/`:
    - `Clinical+Risk+Management+-+Agile+Development+Implementation+Guidance.pdf`
    - `Clinical+Risk+Management+-+Data+Safety.pdf`
-3. Confirm whether `assets/risk-matrix.png` is derived from an upstream NHS/NHS Digital/NHS England document, authored locally, or generated from template data.
+3. Confirm authorship/source for `assets/risk-matrix.png`. The image values visually match the example clinical risk matrix in DCB0129/DCB0160 guidance and the hazard-log templates, but it remains unclear whether the PNG was locally generated or copied/derived from a specific upstream artefact.
 4. Confirm whether OGL v3.0 applies to each upstream NHS/NHS England/NHS Digital file, or whether any document has different terms.
 
 ## Canonical renderings
