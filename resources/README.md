@@ -4,7 +4,7 @@ This directory contains upstream reference material relevant to the SAFETY.md sp
 
 These files are retained as source evidence and context. They are not themselves normative SAFETY.md text. Where SAFETY.md maps to, interprets, or responds to these sources, that interpretation should live in the specification, mappings, or explanatory material rather than by editing the upstream documents.
 
-Readable reconstructions and role-specific briefings derived from legislation sources live in [`../legislation/`](../legislation/). First-pass Markdown/text renderings of upstream documents live in [`../upstream/`](../upstream/). Crosswalks from upstream concepts to SAFETY.md live in [`../mappings/`](../mappings/).
+Readable reconstructions and role-specific briefings derived from legislation sources live in [`../legislation/`](../legislation/). First-pass Markdown/text renderings of upstream documents live in [`../upstream/`](../upstream/). Crosswalks from upstream concepts to SAFETY.md live in [`../spec/mappings/`](../spec/mappings/).
 
 ## Scope
 

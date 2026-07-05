@@ -2,7 +2,7 @@
 
 This folder documents the SAFETY.md skill pack strategy: reusable agent skills for generating, reviewing, and maintaining repository-native clinical safety documentation.
 
-Executable project-local skills now live under [`.agents/skills/`](../.agents/skills/). This folder records the design rationale, catalogue, and distribution direction.
+Executable project-local skills now live under [`../../.agents/skills/`](../../.agents/skills/). This folder records the design rationale, catalogue, and distribution direction.
 
 ## Why skills?
 
@@ -158,7 +158,7 @@ The project-local `.agents/skills/` versions are the canonical executable copies
 Skills should use this repo’s source material in this order:
 
 1. `GLOSSARY.md` for terminology.
-2. `mappings/` for DCB0129/DCB0160/DUAA2025 crosswalks.
+2. `spec/mappings/` for DCB0129/DCB0160/DUAA2025 crosswalks.
 3. `legislation/` for readable DUAA2025 interpretation.
 4. `upstream/` for source renderings, where exact upstream wording is needed.
 5. `resources/` for original files and provenance.

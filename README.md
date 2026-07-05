@@ -32,16 +32,14 @@ SAFETY.md is an implementation and evidence pattern for doing the required work 
 
 | Path | Purpose |
 |---|---|
-| [`spec.md`](./spec.md) | Draft SAFETY.md specification. |
+| [`spec/`](./spec/) | Draft SAFETY.md specification, mappings, and design notes. |
 | [`SAFETY.md`](./SAFETY.md) | Example/template root safety file. |
 | [`roadmap.md`](./roadmap.md) | Current roadmap and work plan. |
 | [`GLOSSARY.md`](./GLOSSARY.md) | Shared terminology for clinical safety, SAFETY.md, and related legislation. |
 | [`resources/`](./resources/) | Upstream source files, manifests, checksums, and provenance. |
 | [`upstream/`](./upstream/) | First-pass Markdown/text renderings of upstream source documents. |
-| [`mappings/`](./mappings/) | Crosswalks from DCB0129, DCB0160, and DUAA2025 concepts to SAFETY.md artefacts. |
 | [`legislation/`](./legislation/) | Readable reconstructions and role-specific briefings for relevant legislation. |
 | [`.agents/skills/`](./.agents/skills/) | Executable project-local SAFETY.md skills. All are user-invoked. |
-| [`skills/`](./skills/) | SAFETY.md skill strategy, catalogue, and distribution plan. |
 | [`queries.md`](./queries.md) | Open questions requiring human confirmation. |
 
 ## Current upstream focus
@@ -90,9 +88,9 @@ The Data (Use and Access) Act 2025 strengthens the wider health/care information
 
 See:
 
-- [`mappings/dcb0129-to-safety-md.md`](./mappings/dcb0129-to-safety-md.md)
-- [`mappings/dcb0160-to-safety-md.md`](./mappings/dcb0160-to-safety-md.md)
-- [`mappings/duaa2025-to-safety-md.md`](./mappings/duaa2025-to-safety-md.md)
+- [`spec/mappings/dcb0129-to-safety-md.md`](./spec/mappings/dcb0129-to-safety-md.md)
+- [`spec/mappings/dcb0160-to-safety-md.md`](./spec/mappings/dcb0160-to-safety-md.md)
+- [`spec/mappings/duaa2025-to-safety-md.md`](./spec/mappings/duaa2025-to-safety-md.md)
 - [`legislation/cso-briefing-data-use-and-access-act-2025.md`](./legislation/cso-briefing-data-use-and-access-act-2025.md)
 
 ## Document control
@@ -112,7 +110,7 @@ scripts/install-zed-skills.sh --scope global
 scripts/install-zed-skills.sh --scope project --project /path/to/project
 ```
 
-See [`skills/distribution.md`](./skills/distribution.md) for the planned path toward richer discovery metadata, Claude Code plugin packaging, and other agent harnesses.
+See [`spec/skills/distribution.md`](./spec/skills/distribution.md) for the planned path toward richer discovery metadata, Claude Code plugin packaging, and other agent harnesses.
 
 ## Status
 

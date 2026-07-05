@@ -12,7 +12,7 @@ Use only when the user explicitly asks for this skill or asks for DUAA2025 / inf
 
 - `legislation/health-and-social-care-act-2012-information-standards-as-amended.md`
 - `legislation/cso-briefing-data-use-and-access-act-2025.md`
-- `mappings/duaa2025-to-safety-md.md`
+- `spec/mappings/duaa2025-to-safety-md.md`
 - `references/duaa2025-checklist.md`
 
 ## Steps

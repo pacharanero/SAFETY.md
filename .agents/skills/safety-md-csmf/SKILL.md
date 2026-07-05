@@ -15,9 +15,9 @@ Generate or update a repo-native clinical safety file set that helps teams do re
 ## Read first
 
 - `GLOSSARY.md`
-- `mappings/dcb0129-to-safety-md.md`
-- `mappings/dcb0160-to-safety-md.md`
-- `mappings/duaa2025-to-safety-md.md`
+- `spec/mappings/dcb0129-to-safety-md.md`
+- `spec/mappings/dcb0160-to-safety-md.md`
+- `spec/mappings/duaa2025-to-safety-md.md`
 - For file shapes, read `references/file-set.md`.
 
 ## Steps

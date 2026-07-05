@@ -1,197 +1,113 @@
 # SAFETY.md Roadmap
 
-## Aim
+## North star
 
-SAFETY.md is intended to make clinical safety documentation easier to do well, not easier to evade.
+SAFETY.md exists to make clinical safety documentation easier to do well, not easier to evade.
 
-The goal is to take NHS England leading-edge clinical safety guidance and related UK health IT standards, then turn them into practical, repository-native conventions that help manufacturers and deploying organisations comply with the rules while wasting as little time as possible on bland documentation.
+The repository should become the canonical source for:
 
-The time saved should be redirected toward the work that actually makes software safer for patients:
+- checked upstream clinical safety references;
+- SAFETY.md specification and conventions;
+- practical templates and schemas;
+- user-invoked agent skills for creating and maintaining high-quality clinical safety documentation close to code.
 
-- identifying hazards;
-- understanding clinical context;
-- designing and evidencing mitigations;
-- reviewing residual risk;
-- keeping safety evidence close to code, releases, issues, pull requests, and operational reality.
+Nothing here replaces DCB0129, DCB0160, DTAC, medical-device regulation, data-protection law, or professional CSO judgement. The aim is to reduce bland paperwork and increase time spent identifying hazards, mitigating them, evidencing controls, reviewing residual risk, and making software safer for patients.
 
-This is why `SAFETY.md` belongs in the root of a code repository: **safety close to code**.
+## Current state
 
-Nothing in this repository is intended to circumvent, dilute, or replace applicable regulations, information standards, clinical safety standards, or professional responsibilities. SAFETY.md is an implementation and evidence pattern for doing the required work in a modern software workflow.
+Completed first-pass foundations:
 
-## Canonical source-of-truth direction
+- upstream DCB0129/DCB0160 PDFs and manifests added;
+- first-pass Markdown/text extractions added under `upstream/`;
+- DUAA2025 readable notes and CSO briefing added under `legislation/`;
+- glossary added;
+- crosswalks added under `spec/mappings/`;
+- executable user-invoked SAFETY.md skills added under `.agents/skills/`;
+- skill discovery metadata and installer added: `skills.json`, `scripts/install-zed-skills.sh`.
 
-This repository is now the focus of current work and should become the canonical source of truth for:
+## Stage 1 — stabilise source corpus
 
-- upstream reference provenance;
-- checked Markdown extractions of DCB0129 and DCB0160 source documents;
-- readable reconstructions of relevant legislation;
-- CSO-facing briefings;
-- SAFETY.md specification work;
-- reusable templates and schemas;
-- crosswalks from SAFETY.md artefacts to DCB0129, DCB0160, DUAA2025-relevant information-standard duties, and other applicable assurance domains.
+Goal: make the upstream reference corpus trustworthy enough to build templates and skills against.
 
-Older separate repositories such as `dcb0129-markdown` and `dcb0129-template` should be treated as historical inputs, not canonical sources.
+- [ ] Complete DCB0129 compliance assessment provenance and, if practical, add a Markdown-readable structure summary.
+- [ ] Complete DCB0160 compliance assessment provenance and, if practical, add a Markdown-readable structure summary.
+- [ ] Confirm source URLs and licence/re-use status for `resources/templates/`.
+- [ ] Confirm source URLs and licence/re-use status for `resources/data-safety/`.
+- [ ] Confirm provenance/authorship of `assets/risk-matrix.png`.
+- [ ] Check DCB0129 Markdown extractions against source PDFs and remove/annotate extraction artefacts.
+- [ ] Check DCB0160 Markdown extractions against source PDFs and remove/annotate extraction artefacts.
+- [ ] Decide whether spreadsheet templates should be rendered as CSV/Markdown tables or retained as binaries plus summaries.
+- [ ] Keep historical source attribution distinct from current publisher/current-owner wording, especially NHS Digital/NHS England/DHSC transition language.
 
-## DCB0129
+## Stage 2 — tighten SAFETY.md specification
 
-* [x] Extract a new, first-pass canonical Markdown version of the DCB0129 source documents into this repository.
-* [ ] Include, at minimum:
-  * [x] Specification (Amd 24/2018 / v4.2)
-  * [x] Implementation Guidance (Amd 24/2018)
-  * [x] Information Standards Notice (Amd 24/2018)
-  * [x] Change Specification (Amd 24/2018)
-  * [ ] Compliance Assessment Template provenance and, if practical, a Markdown-readable summary of its structure.
-* [ ] Ensure all OCR/PDF extraction artefacts have been checked and removed or explicitly annotated as upstream artefacts.
-* [ ] Add per-document provenance blocks: title, source URL, release number, release date, date accessed, local upstream filename, checksum.
-* [ ] Preserve the distinction between faithful upstream rendering and SAFETY.md interpretation.
-* [x] Add a DCB0129-to-SAFETY.md crosswalk.
-* [ ] Clarify manufacturer/supplier-side obligations and avoid blurring them with deployment/use obligations.
-* [ ] Update stale references to NHSX, Turva, and present-tense NHS Digital wording.
-* [ ] Prepare for the planned NHS England/DHSC organisational change by keeping publisher/current-owner names easy to update in bulk, while preserving historical source attribution.
+Goal: turn `spec/specification.md` into a coherent draft that is internally consistent and ready for external review.
 
-## DCB0160
+- [ ] Keep `SAFETY.md` rooted in code repositories as the default convention.
+- [ ] Keep the core file set small enough for real teams to adopt.
+- [ ] Preserve tiering so low-risk projects are not forced into excessive ceremony.
+- [ ] Clarify DCB0129 manufacturer/supplier obligations vs DCB0160 deployment/use obligations throughout.
+- [ ] Clarify DUAA2025-relevant concepts without implying the CSO owns information governance, security, interoperability, or data-protection work.
+- [ ] Resolve severity/likelihood/risk-class numeric encoding gotchas against upstream DCB0129/DCB0160 wording.
+- [ ] Add glossary links from README and specification.
+- [ ] Align glossary terms with upstream DCB0129/DCB0160 definitions where available.
+- [ ] Decide whether `relevant IT provider` status is required, optional, or conditional in core `SAFETY.md`.
+- [ ] Decide whether `Applicable standards and assurance domains` belongs in the core spec or only higher-tier templates.
 
-* [x] Extract a new, first-pass canonical Markdown version of the DCB0160 source documents into this repository.
-* [ ] Include, at minimum:
-  * [x] Specification (Amd 25/2018)
-  * [x] Implementation Guidance (Amd 25/2018)
-  * [x] Information Standards Notice (Amd 25/2018)
-  * [x] Change Specification (Amd 25/2018)
-  * [ ] Compliance Assessment Template provenance and, if practical, a Markdown-readable summary of its structure.
-* [ ] Ensure all OCR/PDF extraction artefacts have been checked and removed or explicitly annotated as upstream artefacts.
-* [ ] Add per-document provenance blocks: title, source URL, release number, release date, date accessed, local upstream filename, checksum.
-* [ ] Preserve the distinction between faithful upstream rendering and SAFETY.md interpretation.
-* [x] Add a DCB0160-to-SAFETY.md crosswalk.
-* [ ] Clarify deployer/health-organisation-side obligations and avoid blurring them with manufacturer/supplier obligations.
-* [ ] Update stale references to NHSX, Turva, and present-tense NHS Digital wording.
-* [ ] Prepare for the planned NHS England/DHSC organisational change by keeping publisher/current-owner names easy to update in bulk, while preserving historical source attribution.
+## Stage 3 — build modern SAFETY.md templates
 
-## Data (Use and Access) Act 2025 and wider information-standard duties
+Goal: produce usable, low-friction templates from this repo’s current source corpus, not from legacy accumulated templates.
 
-* [ ] Treat DUAA2025 as a leading-edge signal that health/care information standards can explicitly reach software, code, IT services, interoperability, portability, storage/access to information, and information security.
-* [x] Maintain readable reconstructions in `legislation/` rather than expecting users to read patch-style statutory amendments directly.
-* [x] Maintain CSO-facing briefings that translate legislation into practical clinical safety questions.
-* [ ] Track the amended Health and Social Care Act 2012 information-standards framework, especially:
-  * [ ] relevant IT provider;
-  * [ ] IT service;
-  * [ ] information technology, including software and code;
-  * [ ] standards covering functionality, connectivity, interoperability, portability, storage/access, and security of information;
-  * [ ] compliance notices/evidence requests;
-  * [ ] public censure risk;
-  * [ ] accreditation schemes.
-* [x] Add SAFETY.md fields or sections for applicable standards and assurance domains.
-* [x] Add template/spec prompts for whether the organisation is acting as manufacturer, deployer, operator, maintainer, supplier, or relevant IT provider.
-* [x] Add an evidence-pack concept suitable for responding quickly to standards compliance queries.
-* [ ] Ensure DUAA2025-related material does not imply that CSOs own all information governance, data protection, interoperability, or security work; instead, show how these domains interface with clinical safety where they can create patient harm.
+- [ ] Treat the old `dcb0129-template` as historical input only.
+- [ ] Design new canonical templates for:
+  - [ ] `SAFETY.md`
+  - [ ] `SAFETY-CASE.md`
+  - [ ] `HAZARD-LOG.md`
+  - [ ] `SAFETY-PLAN.md`
+- [ ] Include applicable standards and assurance domains.
+- [ ] Include manufacturer/deployer/operator/maintainer/relevant-IT-provider role declarations.
+- [ ] Include prompts for hazards arising from interoperability, portability, access to information, information security, analytics, AI/ML, and secondary use of data.
+- [ ] Avoid default claims that a project is “compliant”; use “intended to support evidence of compliance” until reviewed and signed off.
+- [ ] Preserve useful starter-hazard patterns while making clear they are prompts, not completed analysis.
+- [ ] Remove accidental RCPCH, Digital Growth Charts, Turva, Baw Medical, NHSX, or obsolete NHS Digital present-tense hangovers unless deliberately retained as provenance.
 
-## SAFETY.md specification
+## Stage 4 — test and grow the skills
 
-* [ ] Keep `SAFETY.md` rooted in code repositories, analogous to `README.md`, `LICENSE`, `SECURITY.md`, and `CONTRIBUTING.md`.
-* [ ] Make the core file set small enough for real teams to adopt.
-* [ ] Preserve a tiered approach so low-risk projects are not forced into excessive ceremony.
-* [ ] Make clear that SAFETY.md does not replace DCB0129, DCB0160, DTAC, medical device regulation, data protection law, or professional CSO judgement.
-* [ ] Define SAFETY.md as a repository-native implementation and evidence convention.
-* [x] Add explicit support for:
-  * [x] manufacturer/supplier-side safety evidence;
-  * [x] deployment/use-side safety evidence;
-  * [x] linked hazards and mitigations;
-  * [x] release/configuration-item traceability;
-  * [x] GitHub Issues or Markdown hazard logs;
-  * [x] pull-request review and CSO approval trail;
-  * [x] exportable evidence packs.
-* [x] Add standard wording explaining that Git-based document control implements, rather than avoids, document control.
+Goal: prove the user-invoked skills on real repositories and improve them based on observed gotchas.
 
-## Clinical Safety Management File Template
+- [ ] Test `safety-md-csmf` on `calc`.
+- [ ] Test the skill pack on one historical Turva/RCPCH-derived repo.
+- [ ] Test on one low-risk informational health app.
+- [ ] Test on one deployment-style repo.
+- [ ] Test on one AI/ML-adjacent or analytics-adjacent repo.
+- [ ] Capture repeated failures in each skill’s `Common Gotchas` section.
+- [ ] Improve reference files and templates based on test outputs.
+- [ ] Validate that user-invoked behaviour works as intended and skills do not auto-fire.
+- [ ] Test global install from this repo into `~/.agents/skills/`.
 
-* [ ] Treat the old `dcb0129-template` as historical input, not as canonical current material.
-* [ ] Restart the Clinical Safety Management File template from first principles using this repo's source corpus, glossary, crosswalks, and legislation notes.
-* [ ] Preserve the useful overarching aim of the old template: fast, low-friction generation of a usable safety documentation skeleton.
-* [ ] Avoid carrying forward project-specific history, including stray RCPCH, Digital Growth Charts, Turva, Baw Medical, NHSX, or obsolete NHS Digital present-tense references, unless included deliberately as attribution/provenance.
-* [ ] Extract a new canonical version of each upstream template in `resources/templates/`, including provenance, source URL, access date, and licence/re-use status. First-pass DOCX text extraction and checksums added; source URLs/licensing remain open in `queries.md`.
-* [ ] Build a new modern template from scratch once upstream template provenance is complete.
-* [ ] Include an `Applicable standards and assurance domains` section in generated documentation.
-* [ ] Include explicit manufacturer/deployer/relevant-IT-provider role declarations.
-* [ ] Include prompts for hazards arising from interoperability, data portability, access to information, information security, analytics, AI/ML, and secondary use of data.
-* [ ] Avoid default claims that a project is “compliant”; prefer “intended to support evidence of compliance” until reviewed and signed off.
+## Stage 5 — distribution and packaging
 
-## Glossary and terminology
+Goal: make SAFETY.md installable and useful across agent harnesses without duplicating skill logic by hand.
 
-* [x] Add an initial glossary to help use terms consistently.
-* [ ] Keep glossary terms aligned with upstream DCB0129/DCB0160 definitions where those definitions exist.
-* [ ] Mark terms as one of:
-  * upstream defined term;
-  * SAFETY.md convention;
-  * DUAA2025 / legislative term;
-  * working project terminology.
-* [ ] Avoid inventing new terms where an existing DCB0129/DCB0160 or statutory term is available.
-* [ ] Add glossary links from the README and specification.
+- [ ] Add explicit skill-pack versioning and compatibility metadata.
+- [ ] Decide whether Claude Code distribution should be a direct SAFETY.md plugin, an ArcKit overlay update, or both.
+- [ ] Prototype Claude Code plugin layout if direct distribution is preferred.
+- [ ] Create a converter plan for Codex/OpenCode/Gemini/Copilot if demand exists.
+- [ ] Keep `.agents/skills/` as canonical skill source and generate harness-specific distributions from it where practical.
+- [ ] Add public installation docs for project-local and global installs.
+- [ ] Consider a `dist/` layout only once the canonical skill behaviour is stable.
 
-## Licensing
+## Stage 6 — licensing and release readiness
 
-* [x] Clearly signpost the licence model under which each part of this project is distributed.
-* [ ] Check the licence/re-use position for upstream NHS/NHS England/NHS Digital documentation; likely OGL for much source material, but verify per source.
-* [x] Clearly separate:
-  * [x] upstream source material;
-  * [x] faithful Markdown renderings of upstream source material;
-  * [x] SAFETY.md original specification text;
-  * [x] templates derived from upstream documents;
-  * [x] original commentary, mappings, briefings, and examples.
-* [ ] Anything authored by Marcus Baw as original SAFETY.md work is intended to be CC-BY-SA-Int 4.0 unless otherwise stated.
-* [ ] Commercial reuse is allowed and encouraged, but attribution is required.
-* [ ] Add SPDX-style licence markers or frontmatter where practical.
+Goal: make the repository safe and clear for public reuse.
 
-
-## Skills roadmap
-
-SAFETY.md should become a specialist skill pack for generating, reviewing, and maintaining repository-native clinical safety documentation. Executable skills live in [`.agents/skills/`](./.agents/skills/). See [`skills/README.md`](./skills/README.md), [`skills/catalogue.md`](./skills/catalogue.md), and [`skills/distribution.md`](./skills/distribution.md).
-
-Use a consistent `safety-md-*` naming scheme rather than command-style names. The rough command ideas map as follows:
-
-| Original idea | Planned skill |
-|---|---|
-| `/create-dcb-0129-csmf` | `safety-md-csmf` with manufacturer/DCB0129 branch |
-| `/create-dcb-0160-csmf` | `safety-md-csmf` with deployer/DCB0160 branch |
-| `/create-safety-case` | `safety-md-csmf` and/or `safety-md-review` depending on whether creating or updating |
-| `/determine-mdr-classification` | `safety-md-mdr-triage` only; full MDR classification may remain better handled by ArcKit/regulatory specialist review |
-| `/create-mdr-qms` | Out of scope for core SAFETY.md initially; track as possible future `safety-md-qms-evidence` or handoff to ArcKit/regulatory tooling |
-| `/prepare-mdr-registration` | Out of scope for core SAFETY.md initially; track as possible future regulatory handoff, not a clinical safety skill |
-| `/create-dtac` | `safety-md-dtac-evidence` for clinical-safety evidence slice; full DTAC generation remains better suited to ArcKit |
-
-### Skill creation principles
-
-* [x] Add a skill strategy document grounded in Zed skill guidance and the `writing-great-skills` predictability/progressive-disclosure model.
-* [x] Define a consistent skill naming scheme.
-* [x] Define a first-pass skill catalogue.
-* [x] Define an implementation plan for the first executable skills.
-* [x] Create project-local executable skill `safety-md-csmf`.
-* [x] Create project-local executable skill `safety-md-hazard-workshop`.
-* [x] Create project-local executable skill `safety-md-review`.
-* [x] Create project-local executable skill `safety-md-duaa2025-check`.
-* [x] Create project-local executable skill `safety-md-template-modernise`.
-* [x] Create project-local executable skill `safety-md-mdr-triage`.
-* [x] Create project-local executable skill `safety-md-dtac-evidence`.
-* [x] Create user-invoked `safety-md-router` once the number of skills creates cognitive load.
-* [x] Create maintenance skills `safety-md-release-review` and `safety-md-incident-update`.
-* [x] Keep initial skills concise and move longer content into `references/` and `templates/`.
-* [x] Add a `Common Gotchas` section to core executable skills and grow it from real runs.
-* [ ] Test initial skills on `calc`, one historical Turva/RCPCH-derived repo, one low-risk informational app, one deployment-style repo, and one AI/ML-adjacent repo.
-
-### Skill distribution
-
-* [x] Document distribution strategy for Zed/project-local skills, global installs, Claude Code plugins, ArcKit handoff, and other agent harnesses.
-* [x] Add `skills.json` discovery metadata.
-* [x] Add a simple installer script for copying SAFETY.md skills to `~/.agents/skills/` or another project's `.agents/skills/`.
-* [ ] Test global install from this repo into `~/.agents/skills/`.
-* [ ] Decide whether Claude Code distribution should be a direct SAFETY.md plugin, an ArcKit overlay update, or both.
-* [ ] Prototype Claude Code plugin layout if direct distribution is preferred.
-* [ ] Create a converter plan for Codex/OpenCode/Gemini/Copilot if demand exists.
-* [ ] Add explicit skill-pack versioning and compatibility metadata.
-
-### Skill positioning vs ArcKit
-
-* [ ] Keep SAFETY.md focused as the clinical safety engine: source corpus, glossary, mappings, templates, and focused skills.
-* [ ] Treat ArcKit as a broad governance/assurance vehicle that can consume SAFETY.md outputs.
-* [ ] Do not try to duplicate ArcKit's full DTAC/MDR/QMS breadth inside core SAFETY.md skills.
-* [ ] Feed DUAA2025-aware improvements back into ArcKit's NHS overlay once SAFETY.md conventions stabilise.
-* [x] Preserve root-of-repository `SAFETY.md` as the default output pattern for SAFETY.md skills, even where ArcKit uses `projects/{NNN}/clinical-safety/`.
-* [x] Make SAFETY.md skills user-invoked only, so users deliberately choose when clinical safety/regulatory workflows run.
+- [ ] Confirm OGL or other licence/re-use status for all upstream NHS/NHS England/NHS Digital material.
+- [ ] Clarify that original SAFETY.md authored material is CC-BY-SA-4.0 International unless otherwise stated.
+- [ ] Confirm commercial reuse wording and attribution requirements.
+- [ ] Add SPDX-style licence markers or frontmatter where practical.
+- [ ] Add repository-level versioning for:
+  - [ ] SAFETY.md specification version;
+  - [ ] upstream reference snapshot date;
+  - [ ] skill pack version;
+  - [ ] template/schema version.
+- [ ] Prepare an initial tagged release once Stage 1–4 have enough review evidence.
