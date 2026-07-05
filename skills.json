@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "skill_pack": "safety-md",
+  "user_invoked_by_default": true,
+  "skills": [
+    {
+      "name": "safety-md-csmf",
+      "path": ".agents/skills/safety-md-csmf",
+      "summary": "User-invoked skill for generating or updating repo-native SAFETY.md Clinical Risk Management File documentation.",
+      "user_invoked": true,
+      "outputs": [
+        "SAFETY.md",
+        "SAFETY-CASE.md",
+        "HAZARD-LOG.md"
+      ],
+      "domains": [
+        "DCB0129",
+        "DCB0160",
+        "DUAA2025"
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-dtac-evidence",
+      "path": ".agents/skills/safety-md-dtac-evidence",
+      "summary": "User-invoked skill for preparing the clinical-safety evidence slice needed for NHS DTAC from SAFETY.md documentation.",
+      "user_invoked": true,
+      "outputs": [],
+      "domains": [
+        "DTAC",
+        "DCB0129",
+        "DCB0160"
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-duaa2025-check",
+      "path": ".agents/skills/safety-md-duaa2025-check",
+      "summary": "User-invoked skill for checking SAFETY.md documentation against DUAA2025 and amended health/care information-standard implications.",
+      "user_invoked": true,
+      "outputs": [],
+      "domains": [
+        "DUAA2025"
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-hazard-workshop",
+      "path": ".agents/skills/safety-md-hazard-workshop",
+      "summary": "User-invoked skill for running a clinical safety hazard-identification workshop and updating a SAFETY.md hazard log.",
+      "user_invoked": true,
+      "outputs": [
+        "HAZARD-LOG.md"
+      ],
+      "domains": [
+        "DCB0129",
+        "DCB0160"
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-incident-update",
+      "path": ".agents/skills/safety-md-incident-update",
+      "summary": "User-invoked skill for updating SAFETY.md hazard logs and safety evidence after an incident, near miss, or safety signal.",
+      "user_invoked": true,
+      "outputs": [],
+      "domains": [],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-mdr-triage",
+      "path": ".agents/skills/safety-md-mdr-triage",
+      "summary": "User-invoked skill for lightweight medical-device/SaMD triage and escalation from SAFETY.md documentation.",
+      "user_invoked": true,
+      "outputs": [],
+      "domains": [
+        "UK MDR",
+        "EU MDR",
+        "SaMD"
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-release-review",
+      "path": ".agents/skills/safety-md-release-review",
+      "summary": "User-invoked skill for reviewing whether a release, PR, or code change affects SAFETY.md clinical safety evidence.",
+      "user_invoked": true,
+      "outputs": [],
+      "domains": [],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-review",
+      "path": ".agents/skills/safety-md-review",
+      "summary": "User-invoked skill for reviewing SAFETY.md, CSMF, DCB0129, or DCB0160 documentation for safety, evidence, and terminology gaps.",
+      "user_invoked": true,
+      "outputs": [],
+      "domains": [],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-router",
+      "path": ".agents/skills/safety-md-router",
+      "summary": "User-invoked router for choosing the right SAFETY.md skill.",
+      "user_invoked": true,
+      "outputs": [],
+      "domains": [],
+      "status": "draft"
+    },
+    {
+      "name": "safety-md-template-modernise",
+      "path": ".agents/skills/safety-md-template-modernise",
+      "summary": "User-invoked skill for migrating older CSMF, DCB0129/DCB0160, Word, MkDocs, or historical safety docs into SAFETY.md style.",
+      "user_invoked": true,
+      "outputs": [],
+      "domains": [],
+      "status": "draft"
+    }
+  ]
+}

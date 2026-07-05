@@ -143,7 +143,7 @@ Older separate repositories such as `dcb0129-markdown` and `dcb0129-template` sh
 
 ## Skills roadmap
 
-SAFETY.md should become a specialist skill pack for generating, reviewing, and maintaining repository-native clinical safety documentation. See [`skills/README.md`](./skills/README.md), [`skills/catalogue.md`](./skills/catalogue.md), and [`skills/implementation-plan.md`](./skills/implementation-plan.md).
+SAFETY.md should become a specialist skill pack for generating, reviewing, and maintaining repository-native clinical safety documentation. Executable skills live in [`.agents/skills/`](./.agents/skills/). See [`skills/README.md`](./skills/README.md), [`skills/catalogue.md`](./skills/catalogue.md), and [`skills/distribution.md`](./skills/distribution.md).
 
 Use a consistent `safety-md-*` naming scheme rather than command-style names. The rough command ideas map as follows:
 
@@ -175,6 +175,17 @@ Use a consistent `safety-md-*` naming scheme rather than command-style names. Th
 * [x] Keep initial skills concise and move longer content into `references/` and `templates/`.
 * [x] Add a `Common Gotchas` section to core executable skills and grow it from real runs.
 * [ ] Test initial skills on `calc`, one historical Turva/RCPCH-derived repo, one low-risk informational app, one deployment-style repo, and one AI/ML-adjacent repo.
+
+### Skill distribution
+
+* [x] Document distribution strategy for Zed/project-local skills, global installs, Claude Code plugins, ArcKit handoff, and other agent harnesses.
+* [x] Add `skills.json` discovery metadata.
+* [x] Add a simple installer script for copying SAFETY.md skills to `~/.agents/skills/` or another project's `.agents/skills/`.
+* [ ] Test global install from this repo into `~/.agents/skills/`.
+* [ ] Decide whether Claude Code distribution should be a direct SAFETY.md plugin, an ArcKit overlay update, or both.
+* [ ] Prototype Claude Code plugin layout if direct distribution is preferred.
+* [ ] Create a converter plan for Codex/OpenCode/Gemini/Copilot if demand exists.
+* [ ] Add explicit skill-pack versioning and compatibility metadata.
 
 ### Skill positioning vs ArcKit
 

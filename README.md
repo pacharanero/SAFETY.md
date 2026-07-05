@@ -41,7 +41,7 @@ SAFETY.md is an implementation and evidence pattern for doing the required work 
 | [`mappings/`](./mappings/) | Crosswalks from DCB0129, DCB0160, and DUAA2025 concepts to SAFETY.md artefacts. |
 | [`legislation/`](./legislation/) | Readable reconstructions and role-specific briefings for relevant legislation. |
 | [`.agents/skills/`](./.agents/skills/) | Executable project-local SAFETY.md skills. All are user-invoked. |
-| [`skills/`](./skills/) | SAFETY.md skill strategy, catalogue, and implementation plan. |
+| [`skills/`](./skills/) | SAFETY.md skill strategy, catalogue, and distribution plan. |
 | [`queries.md`](./queries.md) | Open questions requiring human confirmation. |
 
 ## Current upstream focus
@@ -100,6 +100,19 @@ See:
 Git-based document control is still document control.
 
 SAFETY.md uses commits, branches, pull requests, reviews, approvals, tags, releases, and repository history to implement the aims of document control in a way that fits modern software development.
+
+## Skills and installation
+
+Executable SAFETY.md skills currently live in [`.agents/skills/`](./.agents/skills/). They are intentionally user-invoked so clinical safety and regulatory workflows only run when the user deliberately chooses them.
+
+Near-term distribution is Git-based: use this repository as the canonical source and install/copy selected skills into a project-local `.agents/skills` directory or a personal `~/.agents/skills/` directory.
+
+```sh
+scripts/install-zed-skills.sh --scope global
+scripts/install-zed-skills.sh --scope project --project /path/to/project
+```
+
+See [`skills/distribution.md`](./skills/distribution.md) for the planned path toward richer discovery metadata, Claude Code plugin packaging, and other agent harnesses.
 
 ## Status
 

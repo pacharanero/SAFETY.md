@@ -1,8 +1,8 @@
 # SAFETY.md Skills Strategy
 
-This folder plans the SAFETY.md skill pack: reusable agent skills for generating, reviewing, and maintaining repository-native clinical safety documentation.
+This folder documents the SAFETY.md skill pack strategy: reusable agent skills for generating, reviewing, and maintaining repository-native clinical safety documentation.
 
-These are planning notes, not executable skills yet. Executable Zed skills should live under `.agents/skills/<skill-name>/SKILL.md` once their scope and supporting files are ready.
+Executable project-local skills now live under [`.agents/skills/`](../.agents/skills/). This folder records the design rationale, catalogue, and distribution direction.
 
 ## Why skills?
 
@@ -100,7 +100,7 @@ Likely SAFETY.md gotchas:
 - DUAA2025-adjacent domains are not automatically CSO-owned, but may create patient harm.
 - Severity/likelihood numeric encodings can conflict with DCB0129 risk-class numbering.
 
-## Proposed executable layout
+## Executable layout
 
 ```text
 .agents/
@@ -151,7 +151,7 @@ Likely SAFETY.md gotchas:
       SKILL.md
 ```
 
-Start project-local. Once stable, package selected skills for global/user installation.
+The project-local `.agents/skills/` versions are the canonical executable copies for now. Once stable, package selected skills for global/user installation and other agent harnesses.
 
 ## Relationship to source corpus
 
