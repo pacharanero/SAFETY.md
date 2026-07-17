@@ -213,6 +213,14 @@ Digital Technology Assessment Criteria: an NHS assessment framework for digital 
 
 SAFETY.md may help provide evidence relevant to DTAC clinical safety requirements, but use of SAFETY.md does not itself establish DTAC compliance.
 
+### ISO 14971
+
+**Status:** External standard / regulatory-context term.
+
+International standard for risk management of medical devices, including software or AI as a medical device where applicable.
+
+SAFETY.md may reuse or map ISO 14971 evidence, but ISO 14971 work does not automatically satisfy DCB0129 or DCB0160 where those standards apply.
+
 ### Medical device software / SaMD
 
 **Status:** Regulatory term / working term.
@@ -220,6 +228,14 @@ SAFETY.md may help provide evidence relevant to DTAC clinical safety requirement
 Software may be regulated as a medical device or software as a medical device depending on intended purpose, claims, functionality, and applicable law/regulation.
 
 SAFETY.md does not determine medical-device status. Where medical-device regulation applies, SAFETY.md documentation should be aligned with, not substituted for, the applicable regulatory evidence.
+
+### Transferred risk-control measure
+
+**Status:** Upstream standard term / working term.
+
+A risk-control measure that cannot be fully implemented by the manufacturer/supplier alone and must be communicated to, accepted by, or implemented by the deploying organisation or another party.
+
+SAFETY.md should make transferred controls visible so deployers can check whether they have been implemented in the local clinical, operational, and technical context.
 
 ## Data (Use and Access) Act 2025 and amended information-standards framework
 

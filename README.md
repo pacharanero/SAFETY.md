@@ -80,9 +80,11 @@ Hazards may become a multi-file or issue-based system, with automation to enforc
 
 For large programmes, safety documentation may span several repositories. Even then, each code repository should have a root `SAFETY.md` pointing to the relevant safety case, hazard log, assumptions, and evidence.
 
-## Relationship to DCB0129, DCB0160, and DUAA2025
+## Relationship to DCB0129, DCB0160, ISO 14971, and DUAA2025
 
 SAFETY.md does not replace DCB0129 or DCB0160. It provides a practical way to organise evidence and documentation that may support compliance with them.
+
+ISO 14971 medical-device risk-management evidence can support SAFETY.md work where relevant, but it does not automatically satisfy DCB0129 or DCB0160. SAFETY.md keeps these assurance domains explicit rather than blending them into a single vague “compliance” claim.
 
 The Data (Use and Access) Act 2025 strengthens the wider health/care information-standards context, including standards that may apply to software, code, IT services, interoperability, portability, storage/access to information, and information security. SAFETY.md should help clinical safety evidence sit alongside those assurance domains without pretending the CSO owns them all.
 
@@ -90,8 +92,11 @@ See:
 
 - [`spec/mappings/dcb0129-to-safety-md.md`](./spec/mappings/dcb0129-to-safety-md.md)
 - [`spec/mappings/dcb0160-to-safety-md.md`](./spec/mappings/dcb0160-to-safety-md.md)
+- [`spec/mappings/iso14971-dcb-to-safety-md.md`](./spec/mappings/iso14971-dcb-to-safety-md.md)
 - [`spec/mappings/duaa2025-to-safety-md.md`](./spec/mappings/duaa2025-to-safety-md.md)
 - [`legislation/cso-briefing-data-use-and-access-act-2025.md`](./legislation/cso-briefing-data-use-and-access-act-2025.md)
+
+Terminology is tracked in [`GLOSSARY.md`](./GLOSSARY.md).
 
 ## Document control
 

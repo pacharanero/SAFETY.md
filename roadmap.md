@@ -43,16 +43,16 @@ Goal: make the upstream reference corpus trustworthy enough to build templates a
 
 Goal: turn `spec/specification.md` into a coherent draft that is internally consistent and ready for external review.
 
-- [ ] Keep `SAFETY.md` rooted in code repositories as the default convention.
-- [ ] Keep the core file set small enough for real teams to adopt.
-- [ ] Preserve tiering so low-risk projects are not forced into excessive ceremony.
-- [ ] Clarify DCB0129 manufacturer/supplier obligations vs DCB0160 deployment/use obligations throughout.
-- [ ] Clarify DUAA2025-relevant concepts without implying the CSO owns information governance, security, interoperability, or data-protection work.
+- [x] Keep `SAFETY.md` rooted in code repositories as the default convention.
+- [x] Keep the core file set small enough for real teams to adopt.
+- [x] Preserve tiering so low-risk projects are not forced into excessive ceremony.
+- [x] Clarify DCB0129 manufacturer/supplier obligations vs DCB0160 deployment/use obligations throughout.
+- [x] Clarify DUAA2025-relevant concepts without implying the CSO owns information governance, security, interoperability, or data-protection work.
 - [ ] Resolve severity/likelihood/risk-class numeric encoding gotchas against upstream DCB0129/DCB0160 wording.
-- [ ] Add glossary links from README and specification.
+- [x] Add glossary links from README and specification.
 - [ ] Align glossary terms with upstream DCB0129/DCB0160 definitions where available.
-- [ ] Decide whether `relevant IT provider` status is required, optional, or conditional in core `SAFETY.md`.
-- [ ] Decide whether `Applicable standards and assurance domains` belongs in the core spec or only higher-tier templates.
+- [x] Decide whether `relevant IT provider` status is required, optional, or conditional in core `SAFETY.md`.
+- [x] Decide whether `Applicable standards and assurance domains` belongs in the core spec or only higher-tier templates.
 
 ## Stage 3 — build modern SAFETY.md templates
 
@@ -102,8 +102,8 @@ Goal: make SAFETY.md installable and useful across agent harnesses without dupli
 Goal: make the repository safe and clear for public reuse.
 
 - [ ] Confirm OGL or other licence/re-use status for all upstream NHS/NHS England/NHS Digital material.
-- [ ] Clarify that original SAFETY.md authored material is CC-BY-SA-4.0 International unless otherwise stated.
-- [ ] Confirm commercial reuse wording and attribution requirements.
+- [x] Clarify that original SAFETY.md authored material is CC-BY-SA-4.0 International unless otherwise stated.
+- [x] Confirm commercial reuse wording and attribution requirements.
 - [ ] Add SPDX-style licence markers or frontmatter where practical.
 - [ ] Add repository-level versioning for:
   - [ ] SAFETY.md specification version;

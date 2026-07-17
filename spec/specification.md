@@ -11,6 +11,8 @@
 
 SAFETY.md defines a lightweight, convention-driven standard for clinical safety documentation in digital health projects. It is designed to integrate naturally into existing software development workflows — specifically Git-based version control and GitHub — without requiring separate toolchains, build systems, or documentation platforms.
 
+Terms used in this specification should be read alongside the project [`GLOSSARY.md`](../GLOSSARY.md). Where DCB0129, DCB0160, legislation, or another upstream source defines a term, that upstream source remains authoritative.
+
 The core principle is **safety close to code**: clinical safety documentation should sit close to the software, release history, issues, pull requests, tests, and operational evidence that affect patient safety.
 
 The guiding principle is **convention over configuration**: a small set of well-named files at the root of a repository, rendered natively by GitHub, auditable via commit history, and machine-readable enough to be linted and validated by automated tools.
@@ -263,12 +265,30 @@ The Data (Use and Access) Act 2025 strengthens the wider framework for health an
 
 SAFETY.md should therefore support evidence that can sit alongside wider information-standard, interoperability, information-security, and data-governance evidence. This does not mean that the CSO owns every adjacent assurance domain. It means that where those domains can create patient harm, the clinical safety documentation should identify the interface, assumptions, hazards, controls, and responsible owners.
 
-Recommended DUAA2025-aware additions include:
+Required DUAA2025-aware core conventions are:
 
 - a role declaration covering manufacturer, supplier, deployer, operator, maintainer, and relevant IT provider status;
-- an applicable standards and assurance domains table;
+- an applicable standards and assurance domains table in root `SAFETY.md`;
+- explicit responsible owners for adjacent assurance domains where they can create patient harm.
+
+`Relevant IT provider` status is **conditional but must be considered**. SAFETY.md documents should record `yes`, `no`, `unclear`, or `not-assessed` rather than silently omitting the field. This keeps the core schema lightweight while avoiding hidden DUAA2025-relevant assumptions.
+
+Recommended DUAA2025-aware additions for higher-risk or more complex projects include:
+
 - hazard prompts for interoperability, portability, access to information, information security, analytics, AI/ML, and secondary use of data;
 - an exportable evidence-pack convention for standards compliance queries.
+
+---
+
+## Current schema decisions
+
+These decisions are part of the current draft and should be revisited before the first tagged release:
+
+- `SAFETY.md` remains the root repository front door for safety evidence, even if larger projects place detailed material under `safety/` or `docs/safety/`.
+- The core file set remains intentionally small: `SAFETY.md`, with `SAFETY-CASE.md`, `HAZARD-LOG.md`, and `SAFETY-PLAN.md` added proportionately by tier and risk.
+- `Applicable standards and assurance domains` belongs in the core root `SAFETY.md`, because it is the fastest way to prevent DCB0129, DCB0160, ISO 14971/MDR, DUAA2025, security, IG, and interoperability responsibilities from being blurred.
+- `relevant-it-provider` status is conditional but must be considered and recorded as `yes`, `no`, `unclear`, or `not-assessed`.
+- Low-risk projects may keep hazard and process material embedded in root `SAFETY.md`, provided the result is still explicit, reviewable, and does not make unsupported compliance claims.
 
 ---
 
