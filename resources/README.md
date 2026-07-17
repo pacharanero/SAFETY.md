@@ -13,6 +13,7 @@ Readable reconstructions and role-specific briefings derived from legislation so
 | [`dcb0129/`](./dcb0129/) | NHS England DCB0129 2018 Update documents for clinical risk management in the manufacture of health IT systems. | Current published standard at date of access. |
 | [`dcb0160/`](./dcb0160/) | NHS England DCB0160 2018 Update documents for clinical risk management in the deployment and use of health IT systems. | Current published standard at date of access. |
 | [`data-safety/`](./data-safety/) | Data safety and agile-development clinical risk management guidance. | Upstream/context material; provenance incomplete. |
+| [`digital-regulations/`](./digital-regulations/) | AI and Digital Regulations Service material relevant to DCB0129/DCB0160, ISO 14971, medical-device regulation, and deployment responsibilities. | Upstream/context material; OGL 3.0 stated on captured source page unless otherwise stated. |
 | [`templates/`](./templates/) | Upstream clinical safety document templates. | Source artefacts for future SAFETY.md-native templates; provenance incomplete. |
 | [`legislation/`](./legislation/) | Legislation or Acts that may affect health IT, clinical safety, information standards, or data use. | Context for future SAFETY.md alignment work. |
 
@@ -36,4 +37,4 @@ Each upstream reference folder should include a `manifest.md` recording:
 
 ## Date of access
 
-Unless otherwise stated in a per-folder manifest, resources in this directory were accessed on **2026-07-03**.
+Unless otherwise stated in a per-folder manifest, resources in this directory were accessed on **2026-07-03**. Newer additions should state their own access date in the relevant manifest.
