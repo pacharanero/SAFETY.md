@@ -38,6 +38,7 @@ SAFETY.md is an implementation and evidence pattern for doing the required work 
 | [`GLOSSARY.md`](./GLOSSARY.md) | Shared terminology for clinical safety, SAFETY.md, and related legislation. |
 | [`resources/`](./resources/) | Upstream source files, manifests, checksums, and provenance. |
 | [`upstream/`](./upstream/) | First-pass Markdown/text renderings of upstream source documents. |
+| [`templates/`](./templates/) | First-pass SAFETY.md-native starter templates. |
 | [`legislation/`](./legislation/) | Readable reconstructions and role-specific briefings for relevant legislation. |
 | [`.agents/skills/`](./.agents/skills/) | Executable project-local SAFETY.md skills. All are user-invoked. |
 | [`queries.md`](./queries.md) | Open questions requiring human confirmation. |

@@ -58,17 +58,17 @@ Goal: turn `spec/specification.md` into a coherent draft that is internally cons
 
 Goal: produce usable, low-friction templates from this repo’s current source corpus, not from legacy accumulated templates.
 
-- [ ] Treat the old `dcb0129-template` as historical input only.
-- [ ] Design new canonical templates for:
-  - [ ] `SAFETY.md`
-  - [ ] `SAFETY-CASE.md`
-  - [ ] `HAZARD-LOG.md`
-  - [ ] `SAFETY-PLAN.md`
-- [ ] Include applicable standards and assurance domains.
-- [ ] Include manufacturer/deployer/operator/maintainer/relevant-IT-provider role declarations.
-- [ ] Include prompts for hazards arising from interoperability, portability, access to information, information security, analytics, AI/ML, and secondary use of data.
-- [ ] Avoid default claims that a project is “compliant”; use “intended to support evidence of compliance” until reviewed and signed off.
-- [ ] Preserve useful starter-hazard patterns while making clear they are prompts, not completed analysis.
+- [x] Treat the old `dcb0129-template` as historical input only.
+- [x] Design new first-pass canonical templates for:
+  - [x] `SAFETY.md`
+  - [x] `SAFETY-CASE.md`
+  - [x] `HAZARD-LOG.md`
+  - [x] `SAFETY-PLAN.md`
+- [x] Include applicable standards and assurance domains.
+- [x] Include manufacturer/deployer/operator/maintainer/relevant-IT-provider role declarations.
+- [x] Include prompts for hazards arising from interoperability, portability, access to information, information security, analytics, AI/ML, and secondary use of data.
+- [x] Avoid default claims that a project is “compliant”; use “intended to support evidence of compliance” until reviewed and signed off.
+- [x] Preserve useful starter-hazard patterns while making clear they are prompts, not completed analysis.
 - [ ] Remove accidental RCPCH, Digital Growth Charts, Turva, Baw Medical, NHSX, or obsolete NHS Digital present-tense hangovers unless deliberately retained as provenance.
 
 ## Stage 4 — test and grow the skills
