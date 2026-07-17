@@ -14,7 +14,7 @@ DCB0160 concerns clinical risk management in the deployment and use of health IT
 | Deployment/use Clinical Risk Management Plan | `SAFETY-PLAN.md` or local deployment process section | Should describe local governance, responsibilities, hazard review, incident process, and change triggers. |
 | Local Hazard Log | `HAZARD-LOG.md`, issue tracker, or deployment hazard register | Must include deployment-specific hazards, not just supplier/manufacturer hazards. |
 | Deployment Safety Case | `SAFETY-CASE.md` or deployment-specific safety case | Should test supplier assumptions against local workflows, users, integrations, and fallback arrangements. |
-| Supplier safety evidence | Linked manufacturer `SAFETY.md`, supplied safety case, release notes, hazard log, known issues | Supplier evidence is input to local safety work, not a replacement for it. |
+| Supplier safety evidence | Linked manufacturer `SAFETY.md`, supplied DCB0129 Clinical Safety Case Report, release notes, hazard log extracts, residual risks, transferred risk-control measures, known issues, IFU/manual/labelling where relevant | Supplier evidence is input to local safety work, not a replacement for it. Deployers should record what was requested, received, reviewed, accepted, rejected, or remains pending. |
 | Operational incident feedback | Issues/incidents linked to hazards and controls | Incidents and near misses should trigger hazard review and safety case updates. |
 | Local configuration | Git tag, deployment manifest, infrastructure-as-code version, environment configuration | Local configuration can materially affect safety and must be identifiable. |
 | Decommissioning | Decommissioning safety section or plan | Should address migration, continuity, access to historical information, and safe fallback. |
@@ -26,3 +26,5 @@ DCB0160 concerns clinical risk management in the deployment and use of health IT
 - Record supplier assumptions and local deployment assumptions.
 - Include interoperability, access-to-information, data migration, downtime, and support/fallback hazards.
 - Avoid implying that supplier/manufacturer documentation alone establishes local deployment safety.
+- Include a supplier-evidence request/review record for DCB0129 Clinical Safety Case Report material, transferred controls, residual risks, assumptions, release notes, known issues, and IFU/manual/labelling where relevant.
+- Where supplier ISO 14971/MDR material is unavailable or proprietary, record the residual-risk communication actually provided and assess whether it is enough for local DCB0160 work.

@@ -100,6 +100,7 @@ The root anchor document. The front door to your clinical safety documentation �
 |---|---|---:|---|---|
 | Clinical risk management — manufacture | DCB0129 | Yes | [Safety Case](./SAFETY-CASE.md) | Manufacturer CSO |
 | Clinical risk management — deployment/use | DCB0160 | No | N/A | N/A |
+| Medical-device risk management | ISO 14971 / UK MDR / EU MDR | TBD | MDR/ISO risk-management evidence | Regulatory owner |
 | Health/care information standards | HSC Act 2012 Part 9 as amended | TBD | Evidence pack | Responsible owner |
 ```
 
@@ -225,6 +226,8 @@ For teams using GitHub Issues as the hazard log, SAFETY.md defines a standard la
 
 SAFETY.md does not replace these NHS standards — it provides a modern implementation and evidence pattern for them. Manufacturer/supplier-side responsibilities under DCB0129 should be distinguished from deployment/use-side responsibilities under DCB0160.
 
+Supplier/manufacturer DCB0129 evidence is an input to deployer DCB0160 work, not a replacement for it. Deploying organisations should be able to record whether they have requested and reviewed supplier DCB0129 Clinical Safety Case Report material, transferred risk-control measures, residual risks, assumptions, known issues, and release/configuration-specific evidence.
+
 | DCB0129 Document | SAFETY.md equivalent |
 |---|---|
 | Clinical Risk Management Plan | `SAFETY-PLAN.md` |
@@ -234,6 +237,23 @@ SAFETY.md does not replace these NHS standards — it provides a modern implemen
 | Configuration Item (release) | Git tag + `SAFETY.md` version field |
 
 A CSO should not assert compliance merely by pointing to the presence of SAFETY.md files. The files and repository history may support a compliance argument where the underlying clinical safety work has been completed, evidenced, reviewed, and approved.
+
+---
+
+## Relationship to ISO 14971 and medical-device risk management
+
+ISO 14971 risk-management evidence can be useful input to SAFETY.md, especially for Software as a Medical Device (SaMD) or AI as a Medical Device (AIaMD), but it does not automatically satisfy DCB0129 or DCB0160 where those standards apply.
+
+SAFETY.md should therefore:
+
+- record ISO 14971 / MDR / UK MDR as a separate assurance domain where relevant;
+- support mapping from ISO 14971 risk-management files into DCB0129 evidence without claiming equivalence;
+- keep DCB patient-clinical-safety hazards distinct from wider medical-device risk records where needed;
+- require DCB-specific CSO review/sign-off where DCB0129/DCB0160 evidence is being claimed;
+- prompt deployers to request and review supplier DCB0129 Clinical Safety Case Report material and transferred controls;
+- trigger MDR/SaMD triage where the software makes clinical claims, performs decision support, or forms part of a medical device or health IT system.
+
+For a fuller working crosswalk, see [`mappings/iso14971-dcb-to-safety-md.md`](./mappings/iso14971-dcb-to-safety-md.md).
 
 ---
 

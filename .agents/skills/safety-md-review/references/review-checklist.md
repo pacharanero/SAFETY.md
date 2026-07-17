@@ -18,6 +18,7 @@ Apply every item.
 
 - Manufacturer/supplier and deployer/use roles are distinct.
 - Operator, maintainer, and relevant IT provider status are explicit or pending.
+- If deployment/use is in scope, supplier DCB0129 evidence request/review status is recorded or marked pending.
 
 ## Hazards
 
@@ -27,6 +28,13 @@ Apply every item.
 - Residual risk is recorded or pending.
 - Evidence exists or is marked pending.
 - High/unknown residual risks have review/acceptance path.
+
+## ISO 14971 / MDR / DCB relationship
+
+- ISO 14971/MDR evidence is listed as a separate assurance domain where relevant.
+- ISO 14971 evidence is not treated as automatically satisfying DCB0129 or DCB0160.
+- SaMD/AIaMD cases have MDR triage status or a pending regulatory-review query.
+- Deployer evidence records received supplier Clinical Safety Case Report material, transferred controls, residual risks, assumptions, release notes, known issues, and IFU/manual/labelling where relevant.
 
 ## DUAA2025
 
