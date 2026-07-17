@@ -28,13 +28,25 @@ Nothing in this repository is intended to circumvent, dilute, or replace applica
 
 SAFETY.md is an implementation and evidence pattern for doing the required work in a modern software workflow.
 
+## Getting started with an LLM
+
+1. Open your software repository in an agentic coding tool or LLM that can read and edit files.
+2. Tell it what the product does, who uses it, and the clinical/deployment context.
+3. Ask it to create a draft SAFETY.md file set using the templates or user-invoked skills in this repo.
+4. Require it to mark unknowns as `[PENDING]`; never let it invent CSO sign-off, evidence, clinical context, or compliance.
+5. Review the drafts with the CSO and team, then use the LLM again to link hazards to code, releases, issues, tests, mitigations, and evidence.
+
+Starter prompt: “Use the SAFETY.md approach to inspect this repo and draft proportionate clinical safety documentation. Distinguish DCB0129 from DCB0160, include applicable standards, mark unknowns as `[PENDING]`, and do not claim compliance or approval unless evidenced.”
+
+For a fuller non-technical walkthrough, see [`docs/getting-started-with-llms.md`](./docs/getting-started-with-llms.md).
+
 ## Repository map
 
 | Path | Purpose |
 |---|---|
 | [`spec/`](./spec/) | Draft SAFETY.md specification, mappings, and design notes. |
 | [`SAFETY.md`](./SAFETY.md) | Example/template root safety file. |
-| [`roadmap.md`](./roadmap.md) | Current roadmap and work plan. |
+| [`spec/roadmap.md`](./spec/roadmap.md) | Current roadmap and work plan. |
 | [`GLOSSARY.md`](./GLOSSARY.md) | Shared terminology for clinical safety, SAFETY.md, and related legislation. |
 | [`resources/`](./resources/) | Upstream source files, manifests, checksums, and provenance. |
 | [`upstream/`](./upstream/) | First-pass Markdown/text renderings of upstream source documents. |
