@@ -30,15 +30,19 @@ SAFETY.md is an implementation and evidence pattern for doing the required work 
 
 ## Getting started with an LLM
 
-1. Open your software repository in an agentic coding tool or LLM that can read and edit files.
-2. Tell it what the product does, who uses it, and the clinical/deployment context.
-3. Ask it to create a draft SAFETY.md file set using the templates or user-invoked skills in this repo.
-4. Require it to mark unknowns as `[PENDING]`; never let it invent CSO sign-off, evidence, clinical context, or compliance.
-5. Review the drafts with the CSO and team, then use the LLM again to link hazards to code, releases, issues, tests, mitigations, and evidence.
+**Fastest route:** open your software project in an AI coding agent and ask it to clone this repository, then run the project installer against the currently open project. The installer adds user-invoked skills plus a `.safety-md/` bundle that works even when the agent cannot discover skills.
 
-Starter prompt: “Use the SAFETY.md approach to inspect this repo and draft proportionate clinical safety documentation. Distinguish DCB0129 from DCB0160, include applicable standards, mark unknowns as `[PENDING]`, and do not claim compliance or approval unless evidenced.”
+```sh
+git clone https://github.com/pacharanero/SAFETY.md.git
+cd SAFETY.md
+sh scripts/embed-in-project.sh --project "/absolute/path/to/your/project"
+```
 
-For a fuller non-technical walkthrough, see [`docs/getting-started-with-llms.md`](./docs/getting-started-with-llms.md).
+Windows PowerShell: `.\scripts\embed-in-project.ps1 -Project "C:\path\to\your\project"`
+
+Then reopen the project and explicitly invoke `safety-md-router` or `safety-md-csmf`. If no skills appear, tell the agent: **“Read `.safety-md/START-HERE.md` and follow it.”** Treat generated files as drafts: unknowns stay `[PENDING]`, and the LLM must not invent evidence, approval, compliance, risk acceptance, or CSO sign-off.
+
+For clone/download instructions, a copy-and-paste setup prompt, Windows help, verification, updates, and the first safety session, see **[Getting started with SAFETY.md and an LLM](./docs/getting-started-with-llms.md)**.
 
 ## Repository map
 
@@ -121,14 +125,15 @@ SAFETY.md uses commits, branches, pull requests, reviews, approvals, tags, relea
 
 Executable SAFETY.md skills currently live in [`.agents/skills/`](./.agents/skills/). They are intentionally user-invoked so clinical safety and regulatory workflows only run when the user deliberately chooses them.
 
-Near-term distribution is Git-based: use this repository as the canonical source and install/copy selected skills into a project-local `.agents/skills` directory or a personal `~/.agents/skills/` directory.
+The recommended install embeds project-local skills and a harness-neutral `.safety-md/` reference bundle:
 
 ```sh
-scripts/install-zed-skills.sh --scope global
-scripts/install-zed-skills.sh --scope project --project /path/to/project
+sh scripts/embed-in-project.sh --project "/path/to/project"
 ```
 
-See [`spec/skills/distribution.md`](./spec/skills/distribution.md) for the planned path toward richer discovery metadata, Claude Code plugin packaging, and other agent harnesses.
+For personal skills available across projects, use `scripts/install-skills.sh --scope global`. The older `scripts/install-zed-skills.sh` name remains as a compatibility wrapper.
+
+See the [getting-started guide](./docs/getting-started-with-llms.md) for exact instructions and [`spec/skills/distribution.md`](./spec/skills/distribution.md) for the planned path toward native Claude Code, Codex, OpenCode, Gemini, Copilot, and other harness packages.
 
 ## Status
 

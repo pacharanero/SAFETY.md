@@ -9,11 +9,20 @@ This document describes the distribution direction for the SAFETY.md skill pack 
 
 ## Current distribution state
 
-The repository currently contains Zed-compatible project-local skills at:
+The repository contains user-invoked Agent Skills at:
 
 ```text
 .agents/skills/<skill-name>/SKILL.md
 ```
+
+The supported project bootstrap scripts are:
+
+```text
+scripts/embed-in-project.sh    # macOS, Linux, Git Bash
+scripts/embed-in-project.ps1   # Windows PowerShell
+```
+
+They install both project-local skills and a small `.safety-md/` guidance/template bundle. This gives a fallback for coding agents that can read project files but do not recognise the Agent Skills layout.
 
 All SAFETY.md skills are deliberately user-invoked:
 
@@ -35,8 +44,9 @@ This means users stay in control of when clinical safety, regulatory, and assura
 
 | Harness / ecosystem | Current status | Likely packaging approach | Notes |
 |---|---|---|---|
-| Zed Agent | Supported in-repo | `.agents/skills/<name>/SKILL.md` | Current layout should work as project-local skills. Users can copy to `~/.agents/skills/` for global use. |
-| Claude Code | Not packaged yet | Claude Code plugin with skills under plugin structure | Needs plugin manifest/layout. ArcKit is a useful reference implementation. |
+| Zed Agent | Supported in-repo and by bootstrap installer | `.agents/skills/<name>/SKILL.md` | Project-local and global installs supported. |
+| Generic file-aware coding agent | Supported by fallback bundle | `.safety-md/START-HERE.md` plus templates/mappings | Does not require native skill discovery. User explicitly asks the agent to read the start file. |
+| Claude Code | Generic fallback supported; native plugin not packaged yet | `.safety-md/` now; Claude Code plugin later | Needs plugin manifest/layout for first-class skill/command discovery. ArcKit is a useful reference implementation. |
 | Codex CLI | Not packaged yet | Convert skills into `.agents/skills/<name>/SKILL.md` plus any Codex-specific metadata if needed | Current Zed-style skills may already be close, but test discovery/invocation. |
 | OpenCode | Not packaged yet | Convert to command/skill format expected by OpenCode | ArcKit converter patterns may be reusable. |
 | Gemini CLI | Not packaged yet | Extension/command format | Likely needs conversion, not direct reuse. |
@@ -45,7 +55,29 @@ This means users stay in control of when clinical safety, regulatory, and assura
 
 ## Minimal install model
 
-The simplest install/distribution model is GitHub plus documented copy paths.
+The simplest supported model is GitHub plus one project bootstrap command:
+
+```sh
+sh scripts/embed-in-project.sh --project "/path/to/project"
+```
+
+or Windows PowerShell:
+
+```powershell
+.\scripts\embed-in-project.ps1 -Project "C:\path\to\project"
+```
+
+The bootstrap installs:
+
+```text
+<project>/.agents/skills/safety-md-*/
+<project>/.agents/skills/_safety-md/
+<project>/.safety-md/START-HERE.md
+<project>/.safety-md/templates/
+<project>/.safety-md/spec/mappings/
+```
+
+This allows native skill invocation where supported and an explicit prompt/file workflow everywhere else.
 
 ### Project-local install
 
@@ -103,28 +135,27 @@ dist/
 
 Do not hand-maintain each `dist/` target. Generate or sync from `.agents/skills/` where practical.
 
-## Install script
+## Install scripts
 
-The initial installer is:
+Use `scripts/embed-in-project.sh` or `scripts/embed-in-project.ps1` for the recommended project-local installation. These install both skills and the generic `.safety-md/` bundle.
 
-```text
-scripts/install-zed-skills.sh
-```
-
-Examples:
+For skills only, the harness-neutral installer is:
 
 ```sh
-scripts/install-zed-skills.sh --scope global
-scripts/install-zed-skills.sh --scope project --project /path/to/project
-scripts/install-zed-skills.sh --target /custom/.agents/skills
+scripts/install-skills.sh --scope global
+scripts/install-skills.sh --scope project --project /path/to/project
+scripts/install-skills.sh --target /custom/.agents/skills
 ```
 
-It:
+`scripts/install-zed-skills.sh` remains as a backwards-compatible wrapper.
+
+The skill installer:
 
 - copies `.agents/skills/safety-md-*` into `~/.agents/skills/`, a target project's `.agents/skills/`, or a custom target;
-- refuses to overwrite existing skills unless `--force` is passed;
-- prints installed skill names;
-- preserves references/templates.
+- copies the shared glossary, mappings, legislation notes, and templates required by installed skills into `_safety-md/`;
+- refuses to overwrite an existing installation unless `--force` is passed;
+- preflights destinations so a refusal does not leave a partial installation;
+- prints installed skill names and the next command to invoke.
 
 ## Claude Code plugin direction
 
@@ -228,26 +259,26 @@ SAFETY.md skills v0.1 target SAFETY.md spec v2.0.0-draft and upstream DCB0129/DC
 ## Distribution roadmap
 
 - [x] Create project-local Zed-compatible skills in `.agents/skills/`.
-- [ ] Add a root install/distribution section to `README.md`.
+- [x] Add a root install/distribution section to `README.md`.
 - [x] Add `skills.json` index.
-- [x] Add `scripts/install-zed-skills.sh` for global/project install.
+- [x] Add harness-neutral global/project skill installer, project bootstrap scripts, and a backwards-compatible Zed wrapper.
 - [ ] Test project-local skills in Zed on `calc` and at least one real health-software repo.
 - [ ] Test copying skills to `~/.agents/skills/` and invoking globally.
 - [ ] Decide whether to package a Claude Code plugin or feed SAFETY.md into ArcKit's existing plugin structure first.
 - [ ] Prototype Claude Code plugin layout if direct plugin distribution is preferred.
 - [ ] Create a converter plan for Codex/OpenCode/Gemini/Copilot if demand exists.
 - [ ] Add release/versioning metadata for the skill pack.
-- [ ] Publish installation docs.
+- [x] Publish explicit project/global installation docs, including a non-technical walkthrough.
 
 ## Near-term recommendation
 
 Do not start with a complex multi-harness plugin system.
 
-Start with:
+Current near-term path:
 
 1. GitHub repo as canonical source.
 2. `.agents/skills/` as canonical executable skill layout.
-3. Clear install docs for project-local and global Zed-compatible use.
-4. A simple installer script.
+3. One project bootstrap for skills plus a generic `.safety-md/` fallback bundle.
+4. Explicit non-technical installation and first-session docs.
 5. Real-world testing and gotcha collection.
 6. Then package for Claude Code / ArcKit / other harnesses once the skill behaviour is proven.

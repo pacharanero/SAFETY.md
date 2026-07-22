@@ -23,7 +23,7 @@ Completed first-pass foundations:
 - glossary added;
 - crosswalks added under `spec/mappings/`;
 - executable user-invoked SAFETY.md skills added under `.agents/skills/`;
-- skill discovery metadata and installer added: `skills.json`, `scripts/install-zed-skills.sh`.
+- skill discovery metadata and project/global installers added: `skills.json`, `scripts/install-skills.sh`, and `scripts/embed-in-project.*`.
 
 ## Stage 1 — stabilise source corpus
 
@@ -93,8 +93,10 @@ Goal: make SAFETY.md installable and useful across agent harnesses without dupli
 - [ ] Decide whether Claude Code distribution should be a direct SAFETY.md plugin, an ArcKit overlay update, or both.
 - [ ] Prototype Claude Code plugin layout if direct distribution is preferred.
 - [ ] Create a converter plan for Codex/OpenCode/Gemini/Copilot if demand exists.
-- [ ] Keep `.agents/skills/` as canonical skill source and generate harness-specific distributions from it where practical.
-- [ ] Add public installation docs for project-local and global installs.
+- [x] Keep `.agents/skills/` as canonical skill source and generate/install shared support material from it where practical.
+- [x] Add public installation docs for project-local and global installs.
+- [x] Add project bootstrap scripts that install Agent Skills plus a harness-neutral `.safety-md/START-HERE.md` fallback.
+- [ ] Test project bootstrap on macOS/Linux, Windows PowerShell, and at least one agent without native skill discovery.
 - [ ] Consider a `dist/` layout only once the canonical skill behaviour is stable.
 
 ## Stage 6 — licensing and release readiness

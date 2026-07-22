@@ -10,11 +10,13 @@ Use only when the user explicitly asks for this skill or asks to review clinical
 
 ## Read first
 
+Read `references/review-checklist.md`. Then read the following from the installed shared bundle at `../_safety-md/`, or from the canonical SAFETY.md repository root if that bundle is absent:
+
 - `GLOSSARY.md`
 - `spec/mappings/dcb0129-to-safety-md.md`
 - `spec/mappings/dcb0160-to-safety-md.md`
+- `spec/mappings/iso14971-dcb-to-safety-md.md`
 - `spec/mappings/duaa2025-to-safety-md.md`
-- `references/review-checklist.md`
 
 ## Steps
 

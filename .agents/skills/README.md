@@ -4,6 +4,8 @@ These skills are deliberately **user-invoked**. They all set `disable-model-invo
 
 Use `safety-md-router` if you are unsure which skill to run.
 
+For the recommended project-local setup, clone the SAFETY.md repository and run `sh scripts/embed-in-project.sh --project "/path/to/project"` or the Windows PowerShell equivalent. See [`../../docs/getting-started-with-llms.md`](../../docs/getting-started-with-llms.md).
+
 | Skill | Purpose |
 |---|---|
 | `safety-md-csmf` | Generate or update a repo-native SAFETY.md Clinical Risk Management File. |

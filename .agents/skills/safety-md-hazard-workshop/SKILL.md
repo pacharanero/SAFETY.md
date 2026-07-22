@@ -10,8 +10,8 @@ Use only when the user explicitly asks for this skill or asks to identify clinic
 
 ## Read first
 
-- `GLOSSARY.md`
-- Existing `SAFETY.md`, `SAFETY-CASE.md`, and `HAZARD-LOG.md` if present.
+- Read `GLOSSARY.md` from the installed shared bundle at `../_safety-md/GLOSSARY.md`, or from the canonical SAFETY.md repository root if that bundle is absent.
+- Read the target project's existing `SAFETY.md`, `SAFETY-CASE.md`, and `HAZARD-LOG.md` if present.
 - `references/hazard-archetypes.md`
 
 ## Steps

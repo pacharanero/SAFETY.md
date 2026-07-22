@@ -14,12 +14,13 @@ Generate or update a repo-native clinical safety file set that helps teams do re
 
 ## Read first
 
+Read `references/file-set.md`. Then read the following from the installed shared bundle at `../_safety-md/`, or from the canonical SAFETY.md repository root if that bundle is absent:
+
 - `GLOSSARY.md`
 - `spec/mappings/dcb0129-to-safety-md.md`
 - `spec/mappings/dcb0160-to-safety-md.md`
 - `spec/mappings/iso14971-dcb-to-safety-md.md`
-- `spec/mappings/duaa2025-to-safety-md.md`
-- For file shapes, read `references/file-set.md`.
+- `spec/mappings/duaa2025-to-safety-md.md`.
 
 ## Steps
 
