@@ -1,6 +1,6 @@
 # SAFETY.md templates
 
-These are first-pass SAFETY.md-native templates for repository-local clinical safety documentation.
+These are first-pass SAFETY.md-native templates for repository-local clinical safety documentation. They follow specification revision `2.0.0-draft.2`.
 
 They are derived from this repository's current specification, mappings, glossary, and upstream source corpus. They are **not** copied from the historical `dcb0129-template` repository and should not be treated as completed clinical safety documentation.
 
@@ -11,7 +11,7 @@ They are derived from this repository's current specification, mappings, glossar
 | [`SAFETY.md`](./SAFETY.md) | Root front door to safety evidence. | All projects. |
 | [`SAFETY-CASE.md`](./SAFETY-CASE.md) | Safety argument, evidence, residual risk, assumptions, and CSO review. | Tier 2+ or where formal DCB0129/DCB0160 evidence is needed. |
 | [`HAZARD-LOG.md`](./HAZARD-LOG.md) | Repository-native hazard log starter. | All projects; may be embedded into `SAFETY.md` for Tier 1. |
-| [`SAFETY-PLAN.md`](./SAFETY-PLAN.md) | Clinical risk management process and responsibilities. | Tier 3, complex projects, or where a separate plan is proportionate. |
+| [`SAFETY-PLAN.md`](./SAFETY-PLAN.md) | Clinical risk management process and responsibilities. | Plan content is required wherever DCB0129 or DCB0160 applies; a separate file at Tier 3, otherwise a section of `SAFETY.md` or `SAFETY-CASE.md` is acceptable. |
 
 ## Use
 

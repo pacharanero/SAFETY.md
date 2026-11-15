@@ -51,6 +51,8 @@ Suggested structure:
 
 See [HAZARD-LOG.md](./HAZARD-LOG.md).
 
+Risk scheme: [PENDING: `dcb0129-ig-example` or link to the scheme defined in the Clinical Risk Management Plan]. DTAC form version 2.0 (C1.2.4) asks the manufacturer to declare the scheme in the Clinical Safety Case Report.
+
 | Hazard ID | Summary | Initial risk | Residual risk | Status | Evidence |
 |---|---|---|---|---|---|
 | [PENDING] | [PENDING] | [PENDING] | [PENDING] | [PENDING] | [PENDING] |
@@ -85,9 +87,17 @@ Consider whether hazards or safety assumptions arise from:
 
 ## 11. Residual risk position
 
-[PENDING: summarise residual risks, unresolved high/unknown risks, acceptance rationale, and person/body responsible for acceptance.]
+[PENDING: summarise residual risks, unresolved undesirable/unacceptable/unknown risks, related operational constraints and limitations, acceptance rationale, and person/body responsible for acceptance.]
 
-## 12. Review and approval
+## 12. Transferred risks and outstanding issues
+
+| Item | Type | Who must act | Required action | Status |
+|---|---|---|---|---|
+| [PENDING] | transferred hazard / transferred control / outstanding test issue or defect | deployer / user / other | [PENDING] | [PENDING] |
+
+## 13. Review and approval
+
+Each issued Clinical Safety Case Report is the CSO-approved state of this file and `HAZARD-LOG.md` at an identified release (for example a Git tag), and must be accompanied by the issued Hazard Log.
 
 | Role | Person/body | Date | Outcome | Evidence |
 |---|---|---|---|---|
@@ -95,6 +105,6 @@ Consider whether hazards or safety assumptions arise from:
 | Residual risk acceptance | [PENDING] | [PENDING] | [PENDING] | [PENDING] |
 | Release/configuration approval | [PENDING] | [PENDING] | [PENDING] | [PENDING] |
 
-## 13. Open questions
+## 14. Open questions
 
 - [PENDING]

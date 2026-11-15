@@ -2,19 +2,31 @@
 
 > Status: draft template. This file is intended to support evidence of clinical safety work. It is not, by itself, a claim of compliance, approval, or safety.
 
+## Required fields
+
+| Field | Value |
+|---|---|
+| Spec Version | 2.0.0-draft.2 |
+| Product | [PENDING] |
+| Version | [PENDING: product version / configuration item] |
+| Standard | [PENDING: DCB0129 / DCB0160 / both / none — if none, give the reason in the summary] |
+| Clinical Safety Officer | [PENDING: name and professional registration] |
+| Organisation | [PENDING: Manufacturer for DCB0129 work; Health Organisation for DCB0160 work] |
+| Role | [PENDING: manufacturer / supplier / deployer / operator / maintainer / relevant-it-provider / other] |
+| Safety Case Status | draft |
+| Hazard Log | [HAZARD-LOG.md](./HAZARD-LOG.md) |
+| Applicable Standards | [PENDING: see Applicable standards and assurance domains] |
+| Last Reviewed | [PENDING: YYYY-MM-DD] |
+
 ## Summary
 
 | Field | Value |
 |---|---|
-| Product / service | [PENDING] |
 | Repository | [PENDING] |
-| Version / configuration item | [PENDING] |
 | Intended use | [PENDING] |
 | Excluded use | [PENDING] |
 | Clinical context | [PENDING] |
-| Safety case status | draft / under-review / approved / archived |
-| Clinical Safety Officer | [PENDING: name, registration, organisation] |
-| Last reviewed | [PENDING: YYYY-MM-DD] |
+| Tier | [PENDING: CSO decision — 1 / 2 / 3] |
 
 ## Role declaration
 
@@ -43,7 +55,7 @@
 
 - [Safety case](./SAFETY-CASE.md)
 - [Hazard log](./HAZARD-LOG.md)
-- [Clinical risk management plan](./SAFETY-PLAN.md) — if proportionate / required
+- [Clinical risk management plan](./SAFETY-PLAN.md) — required wherever DCB0129 or DCB0160 applies; may be a `Clinical Risk Management Plan` section of this file or `SAFETY-CASE.md` at Tiers 1–2
 
 ## Current safety position
 

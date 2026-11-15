@@ -155,7 +155,7 @@ This skill should not pretend to be a full MDR classifier or regulatory opinion.
 
 **Invocation:** user-invoked (`disable-model-invocation: true`).
 
-**Use when:** the user wants to prepare clinical-safety evidence for DTAC, especially Section 1 clinical safety.
+**Use when:** the user wants to prepare clinical-safety evidence for DTAC, specifically section C1 (clinical safety) of the DTAC form version 2.0.
 
 **Primary outputs:**
 

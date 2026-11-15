@@ -11,7 +11,7 @@ DCB0129 concerns clinical risk management in the manufacture of health IT system
 | DCB0129 concept / artefact | SAFETY.md artefact | Notes |
 |---|---|---|
 | Clinical Risk Management File (CRMF) | Repository, anchored by root `SAFETY.md` | The repository can act as the CRMF if it contains or links to safety documents, hazard records, evidence, review trail, and release/configuration history. |
-| Clinical Risk Management Plan (CRMP) | `SAFETY-PLAN.md` or process section in `SAFETY-CASE.md` | Required for more complex projects; low-risk projects may use a shorter embedded process section if proportionate. |
+| Clinical Risk Management Plan (CRMP) | `SAFETY-PLAN.md`, or a `Clinical Risk Management Plan` section in `SAFETY.md` or `SAFETY-CASE.md` | Required wherever DCB0129 applies (3.2.1), with risk acceptability criteria and CSO approval (3.2.2). Low-risk projects may keep it as a shorter embedded section rather than a separate file. |
 | Hazard Log | `HAZARD-LOG.md`, structured data, or labelled issue tracker | Must be auditable, exportable, and clear about hazard IDs, controls, initial/residual risk, status, evidence, and CSO review. |
 | Clinical Safety Case | `SAFETY-CASE.md` | Should include intended use, scope, safety argument, evidence, residual risk, assumptions, and CSO sign-off. |
 | Clinical Safety Case Report | Release-specific safety case report or evidence-pack export | May be generated from repository-native documents and linked evidence for a release/configuration item. For deployers, this is supplier evidence they can request and review; for manufacturers, it should be shareable without exposing unrelated proprietary material. |

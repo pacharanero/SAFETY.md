@@ -2,26 +2,49 @@
 
 | Field | Value |
 |---|---|
+| Spec Version | 2.0.0-draft.2 |
 | Product | [Product Name] |
 | Version | [e.g. 1.0.0] |
 | Standard | DCB0129 |
 | Clinical Safety Officer | [CSO Full Name] ([GMC/NMC/HCPC registration number]) |
 | Organisation | [Organisation Name] |
+| Role | [manufacturer] |
 | Safety Case Status | draft |
 | Hazard Log | [HAZARD-LOG.md](./HAZARD-LOG.md) |
+| Applicable Standards | [DCB0129, ...] |
 | Last Reviewed | [YYYY-MM-DD] |
 
 ## Summary
 
 [Brief narrative - what the product does, intended clinical context, and a summary of the safety approach.]
 
-This product is developed in accordance with [DCB0129](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems) and [DCB0160](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0160-clinical-risk-management-its-application-in-the-deployment-and-use-of-health-it-systems). This file and the associated SAFETY.md file set constitute the Clinical Risk Management File (CRMF) for this product.
+This product's clinical risk management is intended to meet [DCB0129](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems) and [DCB0160](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0160-clinical-risk-management-its-application-in-the-deployment-and-use-of-health-it-systems). This file and the associated SAFETY.md file set form the Clinical Risk Management File (CRMF) for this product. Whether the requirements are met depends on the completed work, evidence and CSO approval recorded here, not on the presence of these files.
 
 ## Documents
 
 - [Safety Case](./SAFETY-CASE.md)
 - [Hazard Log](./HAZARD-LOG.md)
 - [Clinical Risk Management Plan](./SAFETY-PLAN.md)
+
+## Role declaration
+
+| Role | Applies? | Organisation/person | Evidence / notes |
+|---|---:|---|---|
+| Manufacturer | [Yes/No] | [Organisation Name] | [This file set] |
+| Supplier | [Yes/No] | [Organisation Name] | |
+| Deployer / health organisation | [Yes/No] | [Organisation Name] | [Deployment safety case, if any] |
+| Operator | [Yes/No] | [Organisation Name] | |
+| Maintainer | [Yes/No] | [Organisation Name] | |
+| Relevant IT provider (DUAA 2025) | [yes / no / unclear / not-assessed] | [Organisation Name] | |
+
+## Applicable standards and assurance domains
+
+| Domain | Standard / framework | Applies? | Evidence location | Owner |
+|---|---|---:|---|---|
+| Clinical risk management — manufacture | DCB0129 | [Yes/No] | [Safety Case](./SAFETY-CASE.md) | Manufacturer CSO |
+| Clinical risk management — deployment/use | DCB0160 | [Yes/No] | [Deployment safety case] | Deployer CSO |
+| Medical-device risk management | ISO 14971 / UK MDR / EU MDR | [Yes/No/TBD] | [MDR/ISO evidence] | Regulatory owner |
+| Health/care information standards | HSC Act 2012 Part 9 as amended | [Yes/No/TBD] | [Evidence pack] | Responsible owner |
 
 ---
 
@@ -185,9 +208,13 @@ All identified hazards are recorded in the Hazard Log.
 
 [Organisation Name] conducts Healthcare IT system risk assessment in accordance with the Risk Management Strategy. The Hazard Log is updated to capture the risk assessment.
 
+The risk scheme used is [the DCB0129 Implementation Guidance example scheme (Tables 7–10), declared as `risk-scheme: dcb0129-ig-example` in the Hazard Log / describe the organisation's own scheme]. DCB0129 does not prescribe a scheme; the choice and the acceptability criteria below are decisions for [Organisation Name], approved by the CSO.
+
 ### Risk Evaluation
 
 [Organisation Name] conducts Healthcare IT system risk evaluation in accordance with the Risk Management Strategy. The Hazard Log is updated to capture the risk evaluation.
+
+Initial and residual clinical risks are evaluated against these risk acceptability criteria: [state them, e.g. under the example scheme: classes 4–5 unacceptable; class 3 undesirable, acceptable only where further risk reduction is impractical; class 2 acceptable where the cost of further reduction outweighs the benefit or further reduction is impractical; class 1 acceptable].
 
 ### Risk Control
 

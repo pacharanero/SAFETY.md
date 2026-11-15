@@ -48,7 +48,11 @@ Goal: turn `spec/specification.md` into a coherent draft that is internally cons
 - [x] Preserve tiering so low-risk projects are not forced into excessive ceremony.
 - [x] Clarify DCB0129 manufacturer/supplier obligations vs DCB0160 deployment/use obligations throughout.
 - [x] Clarify DUAA2025-relevant concepts without implying the CSO owns information governance, security, interoperability, or data-protection work.
-- [ ] Resolve severity/likelihood/risk-class numeric encoding gotchas against upstream DCB0129/DCB0160 wording.
+- [x] Resolve severity/likelihood/risk-class numeric encoding gotchas against upstream DCB0129/DCB0160 wording. (2.0.0-draft.2: declared `risk-scheme`, example scheme numbered upwards.)
+- [x] State that a CSO-approved Clinical Risk Management Plan is required at every tier where DCB0129/DCB0160 applies.
+- [ ] Tag `v2.0.0-draft.1` (af40549) and `v2.0.0-draft.2`, and tag every later draft revision that changes required fields or the hazard-log schema.
+- [ ] Tell ArcKit's `arckit-uk-nhs` overlay (pinned to af40549 by tractorjuice/arc-kit#1032) about draft.2: risk scheme, numbering direction, `spec-version`, and that its documented deviations are now allowed or covered.
+- [ ] Decide whether to keep or comment on ArcKit's DTAC AI supplement (left for domain review in tractorjuice/arc-kit#1032).
 - [x] Add glossary links from README and specification.
 - [ ] Align glossary terms with upstream DCB0129/DCB0160 definitions where available.
 - [x] Decide whether `relevant IT provider` status is required, optional, or conditional in core `SAFETY.md`.

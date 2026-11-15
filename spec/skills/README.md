@@ -98,7 +98,7 @@ Likely SAFETY.md gotchas:
 - A project is not compliant just because it has SAFETY.md files.
 - Do not invent CSO sign-off, evidence, or clinical validation.
 - DUAA2025-adjacent domains are not automatically CSO-owned, but may create patient harm.
-- Severity/likelihood numeric encodings can conflict with DCB0129 risk-class numbering.
+- DCB0129/DCB0160 do not prescribe a risk scale; the Implementation Guidance tables are examples. Declare the scheme, and under the example scheme number upwards (1 = Minor / Very low).
 
 ## Executable layout
 

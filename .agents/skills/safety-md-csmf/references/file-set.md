@@ -7,11 +7,12 @@
 | `SAFETY.md` | Front door to clinical safety evidence | Always |
 | `SAFETY-CASE.md` | Safety argument, evidence, residual risk, CSO sign-off | Tier 2+, DCB0129/DCB0160, moderate/high risk |
 | `HAZARD-LOG.md` | Structured hazard log or issue-log pointer | Always; may be embedded in Tier 1 |
-| `SAFETY-PLAN.md` | Clinical risk management process | Tier 3, complex org/process, regulated contexts |
+| `SAFETY-PLAN.md` | Clinical Risk Management Plan, including risk scheme and acceptability criteria | Content required wherever DCB0129/DCB0160 applies; separate file at Tier 3, otherwise may be a section of `SAFETY.md` or `SAFETY-CASE.md` |
 | `queries.md` | Unknowns requiring user/CSO answer | When facts are missing |
 
 ## Required sections for `SAFETY.md`
 
+- Required fields table, using every key in `spec/specification.md` (including `spec-version`)
 - Product/version/configuration
 - Organisation and role(s)
 - CSO and review status

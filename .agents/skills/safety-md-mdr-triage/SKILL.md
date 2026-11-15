@@ -27,3 +27,4 @@ This is triage, not regulatory advice and not a full MDR classification workflow
 - ArcKit has a broader MDR classifier; this skill should hand off rather than duplicate it.
 - ISO 14971 completion does not automatically mean DCB0129/DCB0160 obligations are complete where DCB standards apply.
 - SaMD forming part of a health IT system can need both MDR/ISO and DCB clinical-safety evidence paths.
+- The outcome feeds DTAC form version 2.0 questions C1.1.1 (Software or AI as a Medical Device, with a Pre-Acquisition Questionnaire where yes) and C1.1.2 (standalone medical device).

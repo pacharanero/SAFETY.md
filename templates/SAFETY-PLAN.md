@@ -1,6 +1,6 @@
 # Clinical Risk Management Plan — [PROJECT]
 
-> Status: draft template. Use this when a separate clinical risk management plan is proportionate or required. Lower-risk projects may embed a shorter process section in `SAFETY.md` or `SAFETY-CASE.md` if justified.
+> Status: draft template. A Clinical Risk Management Plan is required wherever DCB0129 or DCB0160 applies: produced at the start of the project, including risk acceptability criteria, approved by a CSO, and maintained for the life of the system (requirements 3.2.1–3.2.4). At Tiers 1–2 it may be a `Clinical Risk Management Plan` section of `SAFETY.md` or `SAFETY-CASE.md` instead of this separate file. This plan is not approved until CSO approval is recorded below.
 
 ## 1. Purpose
 
@@ -36,9 +36,20 @@
 
 [PENDING: describe how hazards will be identified, including workshops, issue review, incident review, supplier evidence review, deployment review, clinical workflow review, usability review, and technical change review.]
 
-## 6. Risk evaluation process
+## 6. Risk scheme and acceptability criteria
 
-[PENDING: define severity, likelihood, risk-class scheme, acceptability criteria, and escalation route. Check numeric encodings against DCB0129/DCB0160 guidance before treating them as canonical.]
+DCB0129 and DCB0160 do not prescribe a scheme, and DTAC form version 2.0 notes that none is specified for universal use in the NHS. Define the scheme here and declare it in `HAZARD-LOG.md` (`risk-scheme`).
+
+| Item | Definition |
+|---|---|
+| Scheme | [PENDING: `dcb0129-ig-example` (DCB0129 Implementation Guidance Tables 7–10, numbered as in the SAFETY.md spec) or the project's own scheme] |
+| Severity categories | [PENDING] |
+| Likelihood categories | [PENDING] |
+| Risk matrix | [PENDING] |
+| Risk acceptability criteria | [PENDING: which risk classes are acceptable, undesirable, unacceptable, and who may accept residual risk] |
+| Escalation route | [PENDING] |
+
+Initial and residual clinical risk must be evaluated against these criteria (DCB0129/DCB0160 requirements 5.1.1 and 6.1.4).
 
 ## 7. Risk control process
 
@@ -77,6 +88,12 @@ Where deployment/use is in scope, the plan should explain how the deploying orga
 | Incident-triggered review | [PENDING] | [PENDING] | [PENDING] |
 | Periodic governance review | [PENDING] | [PENDING] | [PENDING] |
 
-## 13. Open questions
+## 13. Approval
+
+| Role | Person | Registration | Date | Outcome |
+|---|---|---|---|---|
+| Clinical Safety Officer | [PENDING] | [PENDING] | [PENDING] | [PENDING] |
+
+## 14. Open questions
 
 - [PENDING]

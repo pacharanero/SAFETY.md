@@ -209,7 +209,7 @@ Following the Data (Use and Access) Act 2025, the framework explicitly supports 
 
 **Status:** Working term / external assurance framework.
 
-Digital Technology Assessment Criteria: an NHS assessment framework for digital health technologies.
+Digital Technology Assessment Criteria: an NHS England assessment framework for commissioners and providers assuring digital health technologies. The current form is version 2.0 (February 2026), which replaced version 1.0 from 6 April 2026. Clinical safety is section C1. See <https://digital.nhs.uk/services/digital-technology-assessment-criteria-dtac>.
 
 SAFETY.md may help provide evidence relevant to DTAC clinical safety requirements, but use of SAFETY.md does not itself establish DTAC compliance.
 
