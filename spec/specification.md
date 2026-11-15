@@ -1,9 +1,11 @@
 # SAFETY.md Specification
 
-**Version:** 2.0.0-draft
+**Version:** 2.0.0-draft.2
 **Status:** Draft
 **Authors:** Marcus Baw (@pacharanero)
 **Licence:** CC-BY-SA-4.0 International, unless otherwise stated
+
+Changes between draft revisions are recorded in [`CHANGELOG.md`](./CHANGELOG.md). Draft revisions are tagged (for example `v2.0.0-draft.2`) so that tools and templates can name the revision they follow.
 
 ---
 
@@ -48,7 +50,15 @@ It is not intended to circumvent, dilute, or replace applicable regulations, inf
 
 ## The File Set
 
-SAFETY.md defines four files. All files live at the root of the project repository.
+SAFETY.md defines four files.
+
+### Location
+
+`SAFETY.md` lives at the root of the repository. The other files may live at the root or in a `safety/` or `docs/safety/` folder, provided `SAFETY.md` links to them.
+
+A repository that holds safety documentation for more than one product, release line, or deployment may keep a complete file set for each in its own folder. The root `SAFETY.md` then acts as an index: it lists each file set with its scope and responsible organisation, and need not carry the required fields itself. Each file set's own `SAFETY.md` carries the required fields.
+
+Where a manufacturer file set and a deployer file set share a folder, tools may give the deployer files distinguishing names (for example `DEPLOYMENT-SAFETY-CASE.md`), provided each `SAFETY.md` links to its own files.
 
 ### `SAFETY.md` *(required)*
 
@@ -56,18 +66,25 @@ The root anchor document. The front door to your clinical safety documentation �
 
 **Required fields:**
 
-| Field | Description |
-|---|---|
-| `product-name` | Full name of the digital health product |
-| `version` | Version of the product this safety case applies to |
-| `standard` | The standard being followed (e.g. `DCB0129`, `DCB0160`, `both`) |
-| `clinical-safety-officer` | Name and GMC/NMC/HCPC number of the responsible CSO |
-| `organisation` | Organisation responsible for this safety file |
-| `role` | One or more of: `manufacturer`, `supplier`, `deployer`, `operator`, `maintainer`, `relevant-it-provider`, `other` |
-| `safety-case-status` | One of: `draft`, `under-review`, `approved`, `archived` |
-| `hazard-log-url` | Link to `HAZARD-LOG.md` or GitHub Issues hazard log |
-| `applicable-standards` | Standards/frameworks in scope, e.g. DCB0129, DCB0160, DTAC, medical-device regulation, information standards |
-| `last-reviewed` | ISO 8601 date of last CSO review |
+| Key | Table label | Description |
+|---|---|---|
+| `spec-version` | Spec Version | The SAFETY.md specification revision followed, e.g. `2.0.0-draft.2` |
+| `product-name` | Product | Full name of the digital health product |
+| `version` | Version | Version of the product this safety case applies to |
+| `standard` | Standard | The clinical risk management standard followed: `DCB0129`, `DCB0160`, `both`, or `none` (with the reason recorded in the summary) |
+| `clinical-safety-officer` | Clinical Safety Officer | Name and professional registration (e.g. GMC, NMC, HCPC, GPhC) of the responsible CSO |
+| `organisation` | Organisation | Organisation responsible for this safety file: the Manufacturer for DCB0129 work, the Health Organisation for DCB0160 work |
+| `role` | Role | One or more of: `manufacturer`, `supplier`, `deployer`, `operator`, `maintainer`, `relevant-it-provider`, `other` |
+| `safety-case-status` | Safety Case Status | One of: `draft`, `under-review`, `approved`, `archived` |
+| `hazard-log-url` | Hazard Log | Link to `HAZARD-LOG.md` or GitHub Issues hazard log |
+| `applicable-standards` | Applicable Standards | Standards/frameworks in scope, e.g. DCB0129, DCB0160, DTAC, medical-device regulation, information standards |
+| `last-reviewed` | Last Reviewed | ISO 8601 date of last CSO review |
+
+**Recording fields.** Record the required fields in a two-column Markdown table near the top of the file. The first column may use either the key or the table label; validators should accept both, ignoring case. List fields (`role`, `applicable-standards`) take comma-separated values. The `Applicable standards and assurance domains` table expands on `applicable-standards` with evidence locations and owners.
+
+**Role and relevant IT provider status.** `role` lists the roles the organisation holds. Relevant IT provider status under the Data (Use and Access) Act 2025 must also be recorded as `yes`, `no`, `unclear`, or `not-assessed` (see [Relationship to DUAA2025](#relationship-to-duaa2025-and-information-standards)). Include `relevant-it-provider` in `role` only when that status is `yes`.
+
+**Additional fields and content.** Files may contain additional fields, sections, and headers (for example a document-control block or a link to a manufacturer's Clinical Safety Case Report in a deployer file), provided they do not reuse or redefine a field defined here. Additional field keys should be lower-case and hyphenated. Tools that add fields should document them.
 
 **Example:**
 
@@ -76,6 +93,7 @@ The root anchor document. The front door to your clinical safety documentation �
 
 | Field | Value |
 |---|---|
+| Spec Version | 2.0.0-draft.2 |
 | Product | My Health App |
 | Version | 1.4.2 |
 | Standard | DCB0129 |
@@ -84,6 +102,7 @@ The root anchor document. The front door to your clinical safety documentation �
 | Role | manufacturer, relevant-it-provider |
 | Safety Case Status | approved |
 | Hazard Log | [HAZARD-LOG.md](./HAZARD-LOG.md) |
+| Applicable Standards | DCB0129, UK MDR 2002 (triage pending), HSC Act 2012 Part 9 information standards |
 | Last Reviewed | 2025-11-01 |
 
 ## Summary
@@ -94,7 +113,14 @@ The root anchor document. The front door to your clinical safety documentation �
 
 - [Safety Case](./SAFETY-CASE.md)
 - [Hazard Log](./HAZARD-LOG.md)
-- [Clinical Risk Management Plan](./SAFETY-PLAN.md) *(if present)*
+- [Clinical Risk Management Plan](./SAFETY-PLAN.md)
+
+## Role declaration
+
+| Role | Applies? | Organisation/person | Evidence / notes |
+|---|---:|---|---|
+| Manufacturer | Yes | Example Health Software Ltd | This file set |
+| Relevant IT provider | yes | Example Health Software Ltd | Evidence pack |
 
 ## Applicable standards and assurance domains
 
@@ -112,14 +138,18 @@ The root anchor document. The front door to your clinical safety documentation �
 
 The clinical safety case. This is the substantive argumentation that the product is acceptably safe for its intended purpose. It should follow a Goal Structuring Notation (GSN)-inspired narrative, even if not using formal GSN diagrams.
 
+DCB0129 distinguishes the Clinical Safety Case, which is maintained throughout the life of the system, from Clinical Safety Case Reports, which are CSO-approved reports issued at each lifecycle phase defined in the Clinical Risk Management Plan, each accompanied by an issued Hazard Log (DCB0129 requirements 3.3.3, 3.4 and 3.5). In SAFETY.md, `SAFETY-CASE.md` is the maintained safety case; a Clinical Safety Case Report is the CSO-approved state of `SAFETY-CASE.md` and `HAZARD-LOG.md` at an identified release, for example a Git tag, or an export generated from them.
+
 **Recommended sections:**
 
 1. **Intended Use** — what the product does and doesn't do; intended user population; clinical context.
 2. **Scope** — what is in scope for this safety case; explicit exclusions.
-3. **Safety Argument** — structured argument that the product is acceptably safe. Reference specific hazards (by ID) from the Hazard Log.
-4. **Evidence** — links to testing, clinical validation, usability studies, code changes, pull requests, incidents, deployment evidence, or other evidence supporting the safety argument.
-5. **Residual Risk** — summary of accepted residual risk, with justification.
-6. **CSO Sign-off** — name, credentials, date, and explicit statement of approval.
+3. **Risk Scheme** — the severity, likelihood, risk-matrix and acceptability scheme used, or a link to where the Clinical Risk Management Plan defines it. DTAC form version 2.0 (question C1.2.4) asks the manufacturer to declare this scheme in the Clinical Safety Case Report.
+4. **Safety Argument** — structured argument that the product is acceptably safe. Reference specific hazards (by ID) from the Hazard Log.
+5. **Evidence** — links to testing, clinical validation, usability studies, code changes, pull requests, incidents, deployment evidence, or other evidence supporting the safety argument.
+6. **Residual Risk** — summary of accepted residual risk, with justification, and any related operational constraints or limitations.
+7. **Transferred Risks and Outstanding Issues** — hazards and risk-control measures that the deploying organisation or users must address, and outstanding test issues or defects that may affect clinical safety.
+8. **CSO Sign-off** — name, credentials, date, and explicit statement of approval.
 
 ---
 
@@ -127,26 +157,63 @@ The clinical safety case. This is the substantive argumentation that the product
 
 The hazard log. This file uses YAML frontmatter for machine-readable structured data, with a rendered Markdown table below for human readability on GitHub.
 
-**Severity, Likelihood, and Risk scoring should follow DCB0129 scales** (1–5 for severity and likelihood; risk matrix output of `low`, `medium`, `high`, or `unacceptable`).
+#### Risk scheme
+
+DCB0129 and DCB0160 do not prescribe a scale. They require the Clinical Risk Management Plan to include risk acceptability criteria (requirement 3.2.1 in both standards), and their implementation guidance gives severity, likelihood, risk-matrix and acceptability tables only as examples, noting that these "may vary across Health IT Systems". DTAC form version 2.0 (question C1.2.4) likewise states that no system for quantifying and stratifying risk is specified for universal use in the NHS.
+
+The hazard log must therefore declare its scheme in a `risk-scheme` field. The value is either `dcb0129-ig-example` or a link to where the project's own scheme is defined (normally the Clinical Risk Management Plan). `severity`, `likelihood`, `risk`, and their residual counterparts are read against that scheme.
+
+**The `dcb0129-ig-example` scheme** is the example scheme in the DCB0129 Implementation Guidance v3.2 (Tables 7–10), which the DCB0160 Implementation Guidance repeats. The guidance names the categories but does not number them. SAFETY.md numbers them so that higher always means more severe, more likely, or more risk, matching the risk matrix:
+
+| Value | Severity (Table 7) | Likelihood (Table 8) |
+|---:|---|---|
+| 1 | Minor | Very low |
+| 2 | Significant | Low |
+| 3 | Considerable | Medium |
+| 4 | Major | High |
+| 5 | Catastrophic | Very high |
+
+Risk class (Table 9), from likelihood and severity:
+
+| Likelihood ↓ / Severity → | 1 Minor | 2 Significant | 3 Considerable | 4 Major | 5 Catastrophic |
+|---|---:|---:|---:|---:|---:|
+| 5 Very high | 3 | 4 | 4 | 5 | 5 |
+| 4 High | 2 | 3 | 3 | 4 | 5 |
+| 3 Medium | 2 | 2 | 3 | 3 | 4 |
+| 2 Low | 1 | 2 | 2 | 3 | 4 |
+| 1 Very low | 1 | 1 | 2 | 2 | 3 |
+
+Example acceptability (Table 10):
+
+| Risk class | Meaning |
+|---:|---|
+| 4–5 | Unacceptable level of risk. Mandatory elimination of hazard or addition of control measure to reduce risk to an acceptable level. |
+| 3 | Undesirable level of risk. Attempts should be made to eliminate the hazard or implement control measures to reduce risk to an acceptable level. Shall only be acceptable when further risk reduction is impractical. |
+| 2 | Acceptable where cost of further reduction outweighs benefits gained or where further risk reduction is impractical. |
+| 1 | Acceptable, no further action required. |
+
+Adopting the example scheme does not remove the need for the Clinical Risk Management Plan to state the acceptability criteria and for a CSO to approve them. The guidance states that the definition of acceptable clinical risk is a decision for the Manufacturer (or, for DCB0160, the Health Organisation).
 
 **File structure:**
 
 ```markdown
 ---
+risk-scheme: dcb0129-ig-example
+
 hazards:
   - id: H001
     description: "Incorrect weight entry leads to erroneous drug dose calculation"
     cause: "Free-text weight input with no validation"
     effect: "Patient receives incorrect drug dose"
-    severity: 4
-    likelihood: 3
-    risk: high
+    severity: 4        # Major
+    likelihood: 3      # Medium
+    risk: 3            # Undesirable
     controls:
       - C001
       - C002
     residual-severity: 4
     residual-likelihood: 1
-    residual-risk: low
+    residual-risk: 2
     status: mitigated   # one of: open | mitigated | accepted | closed
     cso-reviewed: true
     date-raised: 2025-06-01
@@ -161,60 +228,73 @@ controls:
 
 # Hazard Log
 
+Risk scheme: DCB0129 Implementation Guidance example (Tables 7–10).
+
 _Generated from structured data above. Keep in sync._
 
-| ID | Description | Sev | Like | Risk | Controls | Residual Risk | Status |
+| ID | Description | Severity | Likelihood | Risk | Controls | Residual Risk | Status |
 |---|---|---|---|---|---|---|---|
-| H001 | Incorrect weight entry leads to erroneous drug dose | 4 | 3 | HIGH | C001, C002 | LOW | Mitigated |
+| H001 | Incorrect weight entry leads to erroneous drug dose | 4 Major | 3 Medium | 3 | C001, C002 | 2 | Mitigated |
 ```
 
-> **Note on GitHub Issues as hazard log:** For teams who prefer it, GitHub Issues with the SAFETY.md label schema (Severity, Likelihood, Risk Level) may be used as the canonical hazard log. In this case, `HAZARD-LOG.md` should contain a brief explanation and a link to the Issues view. A static `HAZARD-LOG.md` snapshot can be generated from Issues for archival or submission purposes.
+Hazard IDs take the form `H` followed by a number (`H001`) and control IDs `C` followed by a number (`C001`). IDs are stable: once assigned they are not renumbered or reused. A deployer hazard log that sits beside a manufacturer log may use a distinguishing prefix (for example `D-H001`), provided it is used consistently.
+
+> **Note on GitHub Issues as hazard log:** For teams who prefer it, GitHub Issues with the SAFETY.md label schema (Severity, Likelihood, Risk Level) may be used as the canonical hazard log. In this case, `HAZARD-LOG.md` should contain a brief explanation, the `risk-scheme` declaration, and a link to the Issues view. A static `HAZARD-LOG.md` snapshot can be generated from Issues for archival or submission purposes, and an issued snapshot must accompany each Clinical Safety Case Report.
 
 ---
 
-### `SAFETY-PLAN.md` *(optional, recommended for Tier 3)*
+### `SAFETY-PLAN.md` *(Clinical Risk Management Plan)*
 
-The Clinical Risk Management Plan. Documents the *process* by which clinical risk is managed — who is responsible, how hazards are identified, how reviews are conducted, how changes trigger re-assessment, and how evidence is maintained. Most small projects do not need this as a separate file; a brief process section in `SAFETY-CASE.md` is sufficient.
+The Clinical Risk Management Plan. Documents the *process* by which clinical risk is managed — who is responsible, how hazards are identified, the risk scheme and acceptability criteria, how reviews are conducted, how changes trigger re-assessment, and how evidence is maintained.
+
+Wherever DCB0129 or DCB0160 applies, a Clinical Risk Management Plan is required, whatever the tier. It must be produced at the start of the project, include risk acceptability criteria, be approved by a CSO, and be maintained for the life of the system (requirements 3.2.1–3.2.4 in both standards). Its extent should be commensurate with the scale, complexity and clinical risk of the system.
+
+A separate `SAFETY-PLAN.md` is expected at Tier 3. At Tiers 1 and 2 the plan may instead be a section of `SAFETY.md` or `SAFETY-CASE.md`, headed `Clinical Risk Management Plan`, provided its CSO approval is recorded.
 
 ---
 
 ## Tiering
 
-SAFETY.md defines three tiers to reflect proportionate effort for different product risk levels. These align loosely with DCB0129 risk classifications.
+DCB0129 and DCB0160 do not define tiers. They require the extent of clinical risk management to be commensurate with the scale, complexity and level of clinical risk, and wherever they apply they require the same core deliverables: a Clinical Risk Management File, a CSO-approved Clinical Risk Management Plan with risk acceptability criteria, a Hazard Log, and a Clinical Safety Case with Clinical Safety Case Reports.
 
-| Tier | Applies to | Required files |
+SAFETY.md tiers decide how that material is split across files, not whether it is needed:
+
+| Tier | Applies to | Files |
 |---|---|---|
-| **Tier 1** | Low-risk tools, reference apps, decision support with no direct clinical action | `SAFETY.md` only (single file, may embed hazard table) |
-| **Tier 2** | Moderate-risk clinical software, tools informing clinical decisions | `SAFETY.md` + `SAFETY-CASE.md` + `HAZARD-LOG.md` |
+| **Tier 1** | Low-risk tools, reference apps, decision support with no direct clinical action | `SAFETY.md` only, with the plan, hazard table, and safety argument embedded as sections |
+| **Tier 2** | Moderate-risk clinical software, tools informing clinical decisions | `SAFETY.md` + `SAFETY-CASE.md` + `HAZARD-LOG.md`; plan as a section or as `SAFETY-PLAN.md` |
 | **Tier 3** | High-risk / regulated medical devices, Software as a Medical Device (SaMD) | Full file set including `SAFETY-PLAN.md` |
 
-The CSO is responsible for determining the appropriate tier.
+The CSO is responsible for determining the appropriate tier. Tools that generate a file set at a default tier must record the tier as pending CSO decision.
+
+Where neither DCB0129 nor DCB0160 applies, record `standard: none` and the reason. DTAC form version 2.0 (question C1.2.1) asks a manufacturer for this justification, and commissioning organisations can challenge it.
 
 ---
 
 ## GitHub Issues Label Schema
 
-For teams using GitHub Issues as the hazard log, SAFETY.md defines a standard label schema.
+For teams using GitHub Issues as the hazard log, SAFETY.md defines a standard label schema. The names below assume the `dcb0129-ig-example` risk scheme; a project using its own scheme should use its own category names with the same numbering direction (higher means more), and declare the scheme in `HAZARD-LOG.md`.
 
 **Severity:**
-- `severity:1` — Catastrophic
-- `severity:2` — Major
+- `severity:1` — Minor
+- `severity:2` — Significant
 - `severity:3` — Considerable
-- `severity:4` — Significant
-- `severity:5` — Minor
+- `severity:4` — Major
+- `severity:5` — Catastrophic
 
 **Likelihood:**
-- `likelihood:1` — Very High
-- `likelihood:2` — High
+- `likelihood:1` — Very low
+- `likelihood:2` — Low
 - `likelihood:3` — Medium
-- `likelihood:4` — Low
-- `likelihood:5` — Very Low
+- `likelihood:4` — High
+- `likelihood:5` — Very high
 
-**Risk Level:**
-- `risk:unacceptable`
-- `risk:high`
-- `risk:medium`
-- `risk:low`
+**Risk class:**
+- `risk:1` — Acceptable, no further action required
+- `risk:2` — Acceptable where further reduction is impractical or its cost outweighs the benefit
+- `risk:3` — Undesirable
+- `risk:4` — Unacceptable
+- `risk:5` — Unacceptable
 
 **Status:**
 - `hazard:open`
@@ -228,14 +308,17 @@ For teams using GitHub Issues as the hazard log, SAFETY.md defines a standard la
 
 SAFETY.md does not replace these NHS standards — it provides a modern implementation and evidence pattern for them. Manufacturer/supplier-side responsibilities under DCB0129 should be distinguished from deployment/use-side responsibilities under DCB0160.
 
-Supplier/manufacturer DCB0129 evidence is an input to deployer DCB0160 work, not a replacement for it. Deploying organisations should be able to record whether they have requested and reviewed supplier DCB0129 Clinical Safety Case Report material, transferred risk-control measures, residual risks, assumptions, known issues, and release/configuration-specific evidence.
+Supplier/manufacturer DCB0129 evidence is an input to deployer DCB0160 work, not a replacement for it. DCB0160 requires the Health Organisation, in procurement, to ensure that the Manufacturer and the Health IT System comply with DCB0129 (requirement 2.5.1). Deploying organisations should be able to record whether they have requested and reviewed supplier DCB0129 Clinical Safety Case Report material, transferred risk-control measures, residual risks, assumptions, known issues, and release/configuration-specific evidence.
+
+A deployer file set uses the same required fields: `standard` is `DCB0160`, `organisation` is the Health Organisation, and `role` includes `deployer`.
 
 | DCB0129 Document | SAFETY.md equivalent |
 |---|---|
-| Clinical Risk Management Plan | `SAFETY-PLAN.md` |
+| Clinical Risk Management Plan | `SAFETY-PLAN.md`, or a `Clinical Risk Management Plan` section at Tiers 1–2 |
 | Clinical Risk Management File | The repository itself |
 | Hazard Log | `HAZARD-LOG.md` (or GitHub Issues) |
 | Clinical Safety Case | `SAFETY-CASE.md` |
+| Clinical Safety Case Report | CSO-approved state of `SAFETY-CASE.md` and `HAZARD-LOG.md` at an identified release, or an export generated from them |
 | Configuration Item (release) | Git tag + `SAFETY.md` version field |
 
 A CSO should not assert compliance merely by pointing to the presence of SAFETY.md files. The files and repository history may support a compliance argument where the underlying clinical safety work has been completed, evidenced, reviewed, and approved.
@@ -280,14 +363,23 @@ Recommended DUAA2025-aware additions for higher-risk or more complex projects in
 
 ---
 
+## Relationship to DTAC
+
+The NHS Digital Technology Assessment Criteria (DTAC) form version 2.0 (NHS England, February 2026) replaced version 1.0 from 6 April 2026. Clinical safety is section C1. It asks whether the product is Software or AI as a Medical Device (C1.1.1, with a Pre-Acquisition Questionnaire where it is) and, if so, whether it is a standalone medical device (C1.1.2; a standalone device skips the DCB0129 questions), whether DCB0129 applies (C1.2, with a justification at C1.2.1 where it does not), and for the clinical risk management system (C1.2.3), the Clinical Safety Case Report and Hazard Log (C1.2.4), and the CSO's name, profession and registration (C1.2.5).
+
+A SAFETY.md file set can supply the evidence for C1. It does not answer the other DTAC sections (data protection, technical security, interoperability, usability and accessibility), and its presence does not establish that a product passes DTAC.
+
+---
+
 ## Current schema decisions
 
-These decisions are part of the current draft and should be revisited before the first tagged release:
+These decisions are part of the current draft and should be revisited before the first non-draft release:
 
 - `SAFETY.md` remains the root repository front door for safety evidence, even if larger projects place detailed material under `safety/` or `docs/safety/`.
-- The core file set remains intentionally small: `SAFETY.md`, with `SAFETY-CASE.md`, `HAZARD-LOG.md`, and `SAFETY-PLAN.md` added proportionately by tier and risk.
+- The core file set remains intentionally small: `SAFETY.md`, with `SAFETY-CASE.md`, `HAZARD-LOG.md`, and `SAFETY-PLAN.md` added proportionately by tier and risk. Tiering changes how DCB deliverables are split across files, never whether they exist.
 - `Applicable standards and assurance domains` belongs in the core root `SAFETY.md`, because it is the fastest way to prevent DCB0129, DCB0160, ISO 14971/MDR, DUAA2025, security, IG, and interoperability responsibilities from being blurred.
 - `relevant-it-provider` status is conditional but must be considered and recorded as `yes`, `no`, `unclear`, or `not-assessed`.
+- The hazard log declares its risk scheme. The DCB0129 Implementation Guidance example is offered as a named scheme, numbered so that higher always means more, but is not mandatory.
 - Low-risk projects may keep hazard and process material embedded in root `SAFETY.md`, provided the result is still explicit, reviewable, and does not make unsupported compliance claims.
 
 ---
@@ -296,7 +388,9 @@ These decisions are part of the current draft and should be revisited before the
 
 This spec follows Semantic Versioning. Breaking changes to the required file structure or frontmatter schema increment the major version.
 
-The spec version should be declared in `SAFETY.md` to allow validators to check against the correct version.
+While the spec is a draft, each revision that changes required fields, field meanings, or the hazard-log schema increments the pre-release number (`2.0.0-draft.1`, `2.0.0-draft.2`, ...), is recorded in [`CHANGELOG.md`](./CHANGELOG.md), and is tagged `v<version>`. Tools and templates should name the revision they follow by tag.
+
+Each `SAFETY.md` declares the revision it follows in the `spec-version` field so that validators can check it against the correct version.
 
 ---
 
