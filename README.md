@@ -85,7 +85,7 @@ For projects where more formal clinical safety evidence is needed, add:
 
 - `SAFETY-CASE.md` — structured clinical safety case with argument and evidence;
 - `HAZARD-LOG.md` — hazard log in Markdown/structured data, or a link to a managed issue-based hazard log;
-- `SAFETY-PLAN.md` — clinical risk management process and responsibilities, where needed.
+- `SAFETY-PLAN.md` — clinical risk management process, responsibilities, risk scheme and acceptability criteria. Wherever DCB0129 or DCB0160 applies, this plan content is required at every tier; smaller projects may keep it as a section of `SAFETY.md` or `SAFETY-CASE.md`.
 
 ### Tier 3
 
