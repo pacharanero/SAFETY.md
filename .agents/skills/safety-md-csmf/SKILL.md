@@ -17,6 +17,8 @@ Generate or update a repo-native clinical safety file set that helps teams do re
 Read `references/file-set.md`. Then read the following from the installed shared bundle at `../_safety-md/`, or from the canonical SAFETY.md repository root if that bundle is absent:
 
 - `GLOSSARY.md`
+- `spec/specification.md`
+- `templates/` (`SAFETY.md`, `SAFETY-CASE.md`, `HAZARD-LOG.md`, `SAFETY-PLAN.md`)
 - `spec/mappings/dcb0129-to-safety-md.md`
 - `spec/mappings/dcb0160-to-safety-md.md`
 - `spec/mappings/iso14971-dcb-to-safety-md.md`
@@ -28,7 +30,7 @@ Read `references/file-set.md`. Then read the following from the installed shared
 2. Determine role and scope: manufacturer/supplier, deployer, operator, maintainer, relevant IT provider, or unclear. Completion: role table is explicit or `[PENDING]`.
 3. Determine proportionate tier and likely standards: DCB0129, DCB0160, both, neither, ISO 14971/MDR triage needed, DUAA2025 information-standard relevance. Completion: standards table is explicit or `[PENDING]`.
 4. Ask only blocking questions needed to avoid unsafe fabrication. Put minor unknowns in `queries.md`.
-5. Generate or update the file set using `references/file-set.md` and `templates/`. Completion: files are written and unknowns remain marked `[PENDING]`.
+5. Generate or update the file set using `references/file-set.md` and the shared `templates/`. Completion: files are written, `SAFETY.md` carries every required field from `spec/specification.md`, `HAZARD-LOG.md` declares a `risk-scheme`, and unknowns remain marked `[PENDING]`.
 6. Check the output for unsupported compliance claims, invented sign-off, broken role boundaries, and missing hazard/evidence links. Completion: final summary states what was generated and what remains pending.
 
 ## Never do
@@ -42,7 +44,7 @@ Read `references/file-set.md`. Then read the following from the installed shared
 
 - `SAFETY.md` exists or is updated.
 - `SAFETY-CASE.md` and `HAZARD-LOG.md` exist for Tier 2+ or when DCB0129/DCB0160 evidence is needed.
-- `SAFETY-PLAN.md` exists when tier/complexity warrants it, or the reason for omitting it is stated.
+- Where DCB0129 or DCB0160 applies, Clinical Risk Management Plan content with risk acceptability criteria exists, as `SAFETY-PLAN.md` or as a `Clinical Risk Management Plan` section, with CSO approval marked `[PENDING]` until recorded.
 - Applicable standards and assurance domains are present.
 - All unknowns are `[PENDING]` or in `queries.md`.
 - No unsupported compliance or approval claim remains.
@@ -55,3 +57,5 @@ Read `references/file-set.md`. Then read the following from the installed shared
 - Starter hazards are prompts, not evidence that a hazard workshop happened.
 - DUAA2025-adjacent domains are not automatically CSO-owned, but can create patient harm.
 - Root-level `SAFETY.md` is the default unless the user chooses another structure.
+- DCB0129/DCB0160 do not prescribe a risk scale. Do not present the Implementation Guidance example as mandatory; declare it as `dcb0129-ig-example` or link the project's own scheme. Under the example scheme higher numbers mean more severe, more likely, or more risk.
+- Tiers change how the DCB deliverables are split across files, not whether a Clinical Risk Management Plan, Hazard Log and Safety Case are needed.
